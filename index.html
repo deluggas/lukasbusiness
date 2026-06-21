@@ -7,9 +7,52 @@
   </ul>
 </nav>
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
   background-image: url("backgroundimage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
   margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Überschrift */
+header {
+  text-align: center;
+  color: white;
+  margin-top: 200px;
+}
+
+/* 📱 Mobile Anpassung */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    margin-top: 100px;
+    padding: 20px;
+  }
 }
