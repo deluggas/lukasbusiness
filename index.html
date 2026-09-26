@@ -3,82 +3,538 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meine Website</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <title>Lukas Business</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-image: url("backgroundimage.png");
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       background-repeat: no-repeat;
       min-height: 100vh;
+      color: white;
     }
 
-    /* Navigation */
+    /* =========================
+       MENÜBAND
+       EXAKT WIE CONTACT.HTML
+       ========================= */
+
     nav {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 52px;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      backdrop-filter: blur(8px);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      width: 100%;
       margin: 0;
       padding: 0;
     }
 
     nav a {
+      font-family: "Bebas Neue", sans-serif;
       text-decoration: none;
       color: white;
-      font-weight: bold;
-      transition: 0.2s;
+      font-size: 22px;
+      line-height: 52px;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: #00d9ff;
     }
 
-    /* Logo */
+    nav a.active {
+      color: #00d9ff;
+    }
+
     .logo {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 150px;
-      height: auto;
+      top: 0;
+      left: 0;
+      width: 125px;
+      height: 52px;
+      object-fit: contain;
+      object-position: left center;
+      display: block;
+      z-index: 1001;
     }
 
-    /* Inhalt */
-    header {
-      text-align: center;
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: calc(100vh - 52px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.88) 0%,
+          rgba(0, 0, 0, 0.70) 45%,
+          rgba(0, 0, 0, 0.45) 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .hero-small {
+      font-family: "Bebas Neue", sans-serif;
+      color: #00d9ff;
+      font-size: 25px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(60px, 9vw, 120px);
+      line-height: 0.9;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    .hero h1 span {
+      color: #00d9ff;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: #e7e7e7;
+      margin: 30px 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .button-primary {
+      background: #00d9ff;
+      color: black;
+    }
+
+    .button-primary:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
       color: white;
-      margin-top: 200px;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: rgba(0,0,0,0.35);
     }
 
-    header h1 {
-      font-size: 48px;
+    .button-secondary:hover {
+      border-color: #00d9ff;
+      color: #00d9ff;
+      transform: translateY(-2px);
     }
 
-    /* Mobile */
-    @media (max-width: 600px) {
+    /* =========================
+       ALLGEMEINE SEKTIONEN
+       ========================= */
+
+    section {
+      padding: 90px 20px;
+      position: relative;
+    }
+
+    .section-container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(42px, 6vw, 70px);
+      font-weight: 400;
+      margin: 0 0 15px;
+      letter-spacing: 1px;
+    }
+
+    .section-title span {
+      color: #00d9ff;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: #d5d5d5;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 45px;
+    }
+
+    /* =========================
+       LEISTUNGEN
+       ========================= */
+
+    .services-section {
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(8px);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 35px 28px;
+      min-height: 250px;
+      transition: transform 0.3s ease,
+                  border-color 0.3s ease,
+                  background 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0, 217, 255, 0.55);
+      background: rgba(0, 0, 0, 0.78);
+    }
+
+    .card-number {
+      font-family: "Bebas Neue", sans-serif;
+      color: #00d9ff;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin: 20px 0 12px;
+    }
+
+    .card p {
+      color: #cfcfcf;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* =========================
+       ÜBER MICH
+       ========================= */
+
+    .about-section {
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #d8d8d8;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .about-box {
+      background: rgba(0, 0, 0, 0.68);
+      border-radius: 18px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .about-box h3 {
+      font-family: "Bebas Neue", sans-serif;
+      color: #00d9ff;
+      font-size: 35px;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
+    .about-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .about-box li {
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #ddd;
+    }
+
+    .about-box li:last-child {
+      border-bottom: none;
+    }
+
+    .about-box li::before {
+      content: "✓";
+      color: #00d9ff;
+      margin-right: 12px;
+    }
+
+    /* =========================
+       VORTEILE
+       ========================= */
+
+    .advantages-section {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(8px);
+    }
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .advantage {
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    .advantage-number {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 50px;
+      color: #00d9ff;
+      line-height: 1;
+    }
+
+    .advantage h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 25px;
+      font-weight: 400;
+      margin: 15px 0 8px;
+    }
+
+    .advantage p {
+      color: #bbb;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* =========================
+       CTA
+       ========================= */
+
+    .cta-section {
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.75),
+          rgba(0,0,0,0.82)
+        );
+    }
+
+    .cta-section .section-container {
+      max-width: 850px;
+    }
+
+    .cta-section p {
+      color: #d0d0d0;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0 auto 30px;
+      max-width: 650px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: rgba(0, 0, 0, 0.82);
+      padding: 25px 20px;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #00d9ff;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        height: 52px;
+        padding: 0 10px;
+      }
+
       nav ul {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        padding-left: 90px;
       }
 
-      header {
-        margin-top: 100px;
-        padding: 20px;
-      }
-
-      header h1 {
-        font-size: 32px;
+      nav a {
+        font-size: 17px;
+        line-height: 52px;
+        letter-spacing: 0.5px;
       }
 
       .logo {
-        width: 100px;
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 52px;
+        object-fit: contain;
+        object-position: left center;
+        transform: none;
+      }
+
+      .hero {
+        min-height: calc(100vh - 52px);
+      }
+
+      .hero-content {
+        width: 90%;
+        padding: 70px 0;
+      }
+
+      .hero-small {
+        font-size: 20px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .advantages {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      nav {
+        padding: 0 8px;
+      }
+
+      nav ul {
+        gap: 9px;
+        padding-left: 75px;
+      }
+
+      nav a {
+        font-size: 15px;
+        letter-spacing: 0;
+      }
+
+      .logo {
+        width: 75px;
+      }
+
+      .hero-content {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        text-align: center;
+        width: 100%;
+      }
+
+      .advantages {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box {
+        padding: 28px 22px;
       }
     }
   </style>
@@ -86,25 +542,342 @@
 
 <body>
 
+  <!-- =========================
+       MENÜ
+       ========================= -->
+
   <nav>
+    <img src="logoone.png" alt="Lukas Business Logo" class="logo">
+
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Über mich</a></li>
-      <li><a href="services.html">Leistungen</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
+      <li>
+        <a href="index.html" class="active">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">Über mich</a>
+      </li>
+
+      <li>
+        <a href="services.html">Leistungen</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Kontakt</a>
+      </li>
     </ul>
   </nav>
 
-  <img
-    src="logoone.png"
-    alt="Lukas Business"
-    class="logo"
-  >
 
-  <header>
-    <h1>Willkommen auf meiner Website</h1>
-    <p>Das ist mein erstes Design 😊</p>
-  </header>
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-small">
+          LUKAS BUSINESS
+        </div>
+
+        <h1>
+          Ideen.<br>
+          Projekte.<br>
+          <span>Ergebnisse.</span>
+        </h1>
+
+        <p class="hero-text">
+          Willkommen bei Lukas Business. Hier entstehen individuelle
+          Lösungen, professionelle Projekte und Ideen mit einem klaren
+          Ziel: aus Vorstellungen greifbare Ergebnisse zu machen.
+        </p>
+
+        <div class="buttons">
+
+          <a href="services.html" class="button button-primary">
+            Leistungen ansehen
+          </a>
+
+          <a href="contact.html" class="button button-secondary">
+            Kontakt aufnehmen
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LEISTUNGEN
+         ========================= -->
+
+    <section class="services-section">
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          Was ich <span>anbiete</span>
+        </h2>
+
+        <p class="section-intro">
+          Von der ersten Idee bis zum fertigen Ergebnis steht eine
+          klare, strukturierte und persönliche Umsetzung im Mittelpunkt.
+        </p>
+
+        <div class="cards">
+
+          <div class="card">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <h3>
+              Beratung
+            </h3>
+
+            <p>
+              Gemeinsam Ideen entwickeln, Möglichkeiten analysieren
+              und die nächsten Schritte klar definieren.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <h3>
+              Projekte
+            </h3>
+
+            <p>
+              Konzepte und Projekte strukturiert planen und
+              zielgerichtet umsetzen.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-number">
+              03
+            </div>
+
+            <h3>
+              Lösungen
+            </h3>
+
+            <p>
+              Individuelle Lösungen mit Fokus auf Qualität,
+              Zuverlässigkeit und einem professionellen Ergebnis.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÜBER MICH
+         ========================= -->
+
+    <section class="about-section">
+
+      <div class="section-container">
+
+        <div class="about-grid">
+
+          <div class="about-text">
+
+            <h2 class="section-title">
+              Über <span>mich</span>
+            </h2>
+
+            <p>
+              Hinter Lukas Business steht eine persönliche und
+              direkte Arbeitsweise. Dabei geht es nicht darum,
+              möglichst komplizierte Lösungen zu schaffen,
+              sondern darum, das richtige Ergebnis zu erreichen.
+            </p>
+
+            <p>
+              Transparente Kommunikation, saubere Planung und
+              individuelle Lösungen bilden dabei die Grundlage
+              für jedes Projekt.
+            </p>
+
+            <a href="about.html" class="button button-primary">
+              Mehr über mich
+            </a>
+
+          </div>
+
+
+          <div class="about-box">
+
+            <h3>
+              Mein Anspruch
+            </h3>
+
+            <ul>
+              <li>Persönliche Zusammenarbeit</li>
+              <li>Klare Kommunikation</li>
+              <li>Individuelle Lösungen</li>
+              <li>Strukturierte Umsetzung</li>
+              <li>Fokus auf das Ergebnis</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VORTEILE
+         ========================= -->
+
+    <section class="advantages-section">
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          Warum <span>Lukas Business?</span>
+        </h2>
+
+        <p class="section-intro">
+          Ein unkomplizierter Ablauf, persönliche Betreuung und
+          ein klarer Blick auf das eigentliche Ziel.
+        </p>
+
+        <div class="advantages">
+
+          <div class="advantage">
+
+            <div class="advantage-number">
+              01
+            </div>
+
+            <h3>
+              Persönlich
+            </h3>
+
+            <p>
+              Direkter Kontakt und individuelle Betreuung.
+            </p>
+
+          </div>
+
+
+          <div class="advantage">
+
+            <div class="advantage-number">
+              02
+            </div>
+
+            <h3>
+              Klar
+            </h3>
+
+            <p>
+              Verständliche Kommunikation ohne unnötige Umwege.
+            </p>
+
+          </div>
+
+
+          <div class="advantage">
+
+            <div class="advantage-number">
+              03
+            </div>
+
+            <h3>
+              Flexibel
+            </h3>
+
+            <p>
+              Lösungen werden an das jeweilige Projekt angepasst.
+            </p>
+
+          </div>
+
+
+          <div class="advantage">
+
+            <div class="advantage-number">
+              04
+            </div>
+
+            <h3>
+              Zielorientiert
+            </h3>
+
+            <p>
+              Der Fokus liegt auf einem konkreten Ergebnis.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONTAKT CTA
+         ========================= -->
+
+    <section class="cta-section">
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          Bereit für das nächste <span>Projekt?</span>
+        </h2>
+
+        <p>
+          Du hast eine Idee, ein Projekt oder möchtest einfach
+          mehr erfahren? Dann melde dich gerne direkt.
+        </p>
+
+        <a href="contact.html" class="button button-primary">
+          Kontakt aufnehmen
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+    © 2026 <span>Lukas Business</span> – Alle Rechte vorbehalten.
+  </footer>
 
 </body>
 </html>
