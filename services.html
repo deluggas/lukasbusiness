@@ -177,7 +177,429 @@
     }
 
     .leistung {
-      background: rgba(0,
+      background: rgba(0, 0, 0, 0.65);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 18px;
+
+      padding: 35px;
+
+      min-height: 270px;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .leistung:hover {
+      transform: translateY(-8px);
+
+      border-color: #00d9ff;
+
+      box-shadow:
+        0 15px 40px rgba(0, 217, 255, 0.2);
+    }
+
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .leistung-icon {
+      font-size: 42px;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       KARTEN-TITEL
+    ========================= */
+
+    .leistung h2 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 38px;
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      margin: 0 0 15px;
+
+      color: white;
+    }
+
+
+    /* =========================
+       KARTEN-TEXT
+    ========================= */
+
+    .leistung p {
+      font-family: Arial, sans-serif;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #e8e8e8;
+
+      margin: 0 0 20px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .leistung-button {
+      display: inline-block;
+
+      padding: 10px 20px;
+
+      border: 1px solid #00d9ff;
+
+      border-radius: 25px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+
+      transition: 0.3s ease;
+    }
+
+    .leistung-button:hover {
+      background-color: #00d9ff;
+
+      color: black;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 30px 20px;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 0;
+
+      font-size: 14px;
+
+      color: #ccc;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        height: 60px;
+
+        padding: 0 10px;
+      }
+
+      nav ul {
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+        gap: 16px;
+
+        padding-left: 95px;
+      }
+
+      nav a {
+        font-size: 18px;
+
+        line-height: 60px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 60px;
+
+        top: 0;
+        left: 0;
+      }
+
+      .leistungen {
+        padding: 70px 20px;
+      }
+
+      .leistungen-header h1 {
+        font-size: 48px;
+      }
+
+      .leistungen-header p {
+        font-size: 16px;
+      }
+
+      .leistungen-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leistung {
+        padding: 28px;
+      }
+
+      .leistung h2 {
+        font-size: 34px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <img
+      src="logoone.png"
+      alt="Lukas Business"
+      class="logo"
+    >
+
+    <ul>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">Über mich</a>
+      </li>
+
+      <li>
+        <a href="services.html" class="active">Leistungen</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Kontakt</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- =========================
+       LEISTUNGEN
+  ========================= -->
+
+  <main class="leistungen">
+
+    <div class="leistungen-header">
+
+      <h1>Meine Leistungen</h1>
+
+      <p>
+        Ich biete verschiedene Dienstleistungen an und unterstütze
+        dich sowohl im digitalen Bereich als auch im Alltag.
+        Dabei lege ich Wert auf zuverlässige Arbeit, persönliche Betreuung
+        und Lösungen, die zu deinen individuellen Bedürfnissen passen.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         LEISTUNGS-KARTEN
+    ========================= -->
+
+    <div class="leistungen-grid">
+
+
+      <!-- Nachhilfe -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          📚
+        </div>
+
+        <h2>Nachhilfe geben</h2>
+
+        <p>
+          Du hast Schwierigkeiten in einem bestimmten Fach oder möchtest
+          deine Leistungen verbessern? Ich unterstütze dich beim Lernen,
+          erkläre schwierige Themen verständlich und helfe dir dabei,
+          Schritt für Schritt sicherer zu werden.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Nachhilfe anfragen
+        </a>
+
+      </section>
+
+
+      <!-- Websites -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          💻
+        </div>
+
+        <h2>Websites bauen</h2>
+
+        <p>
+          Du möchtest eine eigene Website für dich, dein Projekt oder
+          dein Unternehmen? Ich erstelle moderne und übersichtliche
+          Websites, die auf verschiedenen Geräten funktionieren und
+          einen professionellen Eindruck vermitteln.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Website anfragen
+        </a>
+
+      </section>
+
+
+      <!-- Dogwalking -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          🐕
+        </div>
+
+        <h2>Dogwalking</h2>
+
+        <p>
+          Dein Hund braucht Bewegung und Gesellschaft, während du
+          beschäftigt bist? Beim Dogwalking kümmere ich mich zuverlässig
+          um deinen Vierbeiner und sorge für einen abwechslungsreichen
+          Spaziergang an der frischen Luft.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Spaziergang mit Hund anfragen
+        </a>
+
+      </section>
+
+
+      <!-- Social Media -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          📱
+        </div>
+
+        <h2>Social Media Management</h2>
+
+        <p>
+          Du möchtest auf Social Media professioneller auftreten, hast
+          aber nicht genug Zeit für die regelmäßige Pflege deiner Kanäle?
+          Ich unterstütze dich bei der Planung und Erstellung von Inhalten
+          sowie bei einem einheitlichen und ansprechenden Auftritt.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Social Media Management anfragen
+        </a>
+
+      </section>
+
+
+      <!-- E-Mail Management -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          📧
+        </div>
+
+        <h2>E-Mail Management</h2>
+
+        <p>
+          Du möchtest deine E-Mails besser organisieren und hast
+          im Alltag nicht genug Zeit für die Bearbeitung deines
+          Postfachs? Ich unterstütze dich bei der Organisation,
+          Bearbeitung und Strukturierung deiner E-Mails.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          E-Mail Management anfragen
+        </a>
+
+      </section>
+
+
+      <!-- Babysitting -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          👶
+        </div>
+
+        <h2>Babysitting</h2>
+
+        <p>
+          Du brauchst gelegentlich Unterstützung bei der Betreuung
+          deiner Kinder? Ich kümmere mich zuverlässig und verantwortungsvoll
+          um deine Kinder und sorge für eine angenehme und sichere Zeit.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Babysitting anfragen
+        </a>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Lukas Business – Alle Rechte vorbehalten.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
 ```
 
 
