@@ -145,14 +145,14 @@
     .about {
       flex: 1;
 
-      padding: 100px 25px 80px;
-
       position: relative;
 
-      max-width: 1100px;
       width: 100%;
+      max-width: 1150px;
 
       margin: 0 auto;
+
+      padding: 100px 25px 80px;
     }
 
 
@@ -164,7 +164,7 @@
 
       letter-spacing: 2px;
 
-      margin: 0 0 30px;
+      margin: 0 0 35px;
 
       color: #00d9ff;
 
@@ -180,59 +180,88 @@
     .about-me-image {
       position: absolute;
 
-      top: 90px;
-      right: 25px;
+      top: 75px;
+      right: 35px;
 
       width: 190px;
       height: 190px;
 
-      object-fit: cover;
+      /*
+        contain verhindert, dass oben die Haare
+        durch object-fit: cover abgeschnitten werden.
+      */
+      object-fit: contain;
+      object-position: center center;
 
       border-radius: 50%;
 
       border: 3px solid #00d9ff;
 
+      background-color: rgba(0, 0, 0, 0.35);
+
       box-shadow:
         0 0 25px rgba(0, 217, 255, 0.35),
         0 8px 25px rgba(0, 0, 0, 0.5);
 
-      background-color: rgba(0, 0, 0, 0.35);
+      padding: 5px;
     }
 
 
     /* =========================
-       EDUKI BEREICH
+       ZWEI BEREICHE NEBENEINANDER
+    ========================= */
+
+    .about-columns {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 45px;
+
+      width: 100%;
+
+      padding-right: 220px;
+    }
+
+
+    .about-box {
+      min-width: 0;
+
+      padding: 10px 0;
+    }
+
+
+    /* =========================
+       EDUKI
     ========================= */
 
     .eduki-section {
       display: flex;
 
-      align-items: center;
+      align-items: flex-start;
 
       gap: 25px;
 
-      margin-bottom: 35px;
-
-      padding-right: 230px;
+      width: 100%;
     }
 
 
     .eduki-image {
-      width: 130px;
-      height: 130px;
-
-      object-fit: contain;
+      width: 170px;
+      height: 170px;
 
       flex-shrink: 0;
 
-      border-radius: 18px;
+      object-fit: contain;
+
+      border-radius: 20px;
 
       background-color: rgba(255, 255, 255, 0.08);
 
       padding: 8px;
 
       box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.35);
+        0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
 
@@ -241,14 +270,16 @@
     }
 
 
+    /* =========================
+       TEXTE
+    ========================= */
+
     .about p {
       font-size: 19px;
 
       font-family: Arial, sans-serif;
 
       text-align: left;
-
-      max-width: 600px;
 
       margin: 0 0 25px;
 
@@ -262,20 +293,13 @@
       font-weight: bold;
 
       text-decoration: none;
+
+      transition: color 0.3s ease;
     }
 
 
     .about a:hover {
       color: white;
-    }
-
-
-    /* =========================
-       ROVER
-    ========================= */
-
-    .rover-section {
-      max-width: 700px;
     }
 
 
@@ -297,6 +321,42 @@
       color: white;
 
       backdrop-filter: blur(8px);
+    }
+
+
+    /* =========================
+       TABLET / KLEINERE BILDSCHIRME
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .about-me-image {
+        width: 160px;
+        height: 160px;
+
+        right: 25px;
+      }
+
+
+      .about-columns {
+        padding-right: 190px;
+
+        gap: 30px;
+      }
+
+
+      .eduki-section {
+        flex-direction: column;
+
+        gap: 15px;
+      }
+
+
+      .eduki-image {
+        width: 145px;
+        height: 145px;
+      }
+
     }
 
 
@@ -350,8 +410,6 @@
 
         object-fit: contain;
         object-position: left center;
-
-        transform: none;
       }
 
 
@@ -367,7 +425,7 @@
       }
 
 
-      /* Mein Bild */
+      /* Bild von Lukas */
       .about-me-image {
         position: relative;
 
@@ -376,30 +434,45 @@
 
         display: block;
 
-        width: 145px;
-        height: 145px;
+        width: 155px;
+        height: 155px;
 
         margin: 0 0 30px auto;
       }
 
 
-      /* Eduki */
-      .eduki-section {
+      /*
+        Auf dem Handy wieder untereinander,
+        damit beide Bereiche gut lesbar bleiben.
+      */
+      .about-columns {
+        display: flex;
+
         flex-direction: column;
+
+        gap: 40px;
+
+        padding-right: 0;
+      }
+
+
+      .about-box {
+        width: 100%;
+      }
+
+
+      .eduki-section {
+        flex-direction: row;
 
         align-items: flex-start;
 
-        gap: 15px;
-
-        padding-right: 0;
-
-        margin-bottom: 30px;
+        gap: 20px;
       }
 
 
       .eduki-image {
-        width: 110px;
-        height: 110px;
+        width: 125px;
+        height: 125px;
       }
 
 
@@ -454,14 +527,21 @@
 
 
       .about-me-image {
-        width: 125px;
-        height: 125px;
+        width: 135px;
+        height: 135px;
+      }
+
+
+      .eduki-section {
+        flex-direction: column;
+
+        gap: 15px;
       }
 
 
       .eduki-image {
-        width: 95px;
-        height: 95px;
+        width: 115px;
+        height: 115px;
       }
 
     }
@@ -522,7 +602,7 @@
 
   <section class="about">
 
-    <!-- Bild von Lukas oben rechts -->
+    <!-- Bild von Lukas -->
     <img
       src="bildlukas.png"
       alt="Lukas"
@@ -533,53 +613,68 @@
     <h2>Über mich</h2>
 
 
-    <!-- EDUKI -->
-    <div class="eduki-section">
+    <!-- =========================
+         EDUKI + ROVER
+         PARALLEL NEBENEINANDER
+    ========================= -->
 
-      <img
-        src="eduki.png"
-        alt="Eduki"
-        class="eduki-image"
-      >
+    <div class="about-columns">
 
-      <div class="eduki-text">
+
+      <!-- EDUKI -->
+      <div class="about-box">
+
+        <div class="eduki-section">
+
+          <img
+            src="eduki.png"
+            alt="Eduki"
+            class="eduki-image"
+          >
+
+          <div class="eduki-text">
+
+            <p>
+              Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
+              für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
+              "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
+
+              <a
+                href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mehr auf meiner Eduki-Seite →
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ROVER -->
+      <div class="about-box">
 
         <p>
-          Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
-          für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
-          "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
+          Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
+          die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
+
+          <br><br>
 
           <a
-            href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
+            href="https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mehr auf meiner Eduki-Seite →
+            Mehr auf meinem Roverr-Profil →
           </a>
         </p>
 
       </div>
 
-    </div>
-
-
-    <!-- ROVER -->
-    <div class="rover-section">
-
-      <p>
-        Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
-        die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
-
-        <br>
-
-        <a
-          href="https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mehr auf meinem Roverr-Profil →
-        </a>
-      </p>
 
     </div>
 
@@ -597,6 +692,7 @@
 
 </body>
 </html>
+
 
 
 
