@@ -7,7 +7,6 @@
 
   <title>Über mich | Lukas Business</title>
 
-  <!-- Bebas Neue -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -35,7 +34,6 @@
       background-repeat: no-repeat;
 
       min-height: 100vh;
-
       color: white;
 
       display: flex;
@@ -94,7 +92,6 @@
       font-family: "Bebas Neue", sans-serif;
 
       text-decoration: none;
-
       color: white;
 
       font-size: 22px;
@@ -106,11 +103,7 @@
     }
 
 
-    nav a:hover {
-      color: #00d9ff;
-    }
-
-
+    nav a:hover,
     nav a.active {
       color: #00d9ff;
     }
@@ -135,7 +128,6 @@
       display: block;
 
       z-index: 1001;
-
       pointer-events: none;
     }
 
@@ -150,7 +142,7 @@
       position: relative;
 
       width: 100%;
-      max-width: 1150px;
+      max-width: 1250px;
 
       margin: 0 auto;
 
@@ -158,7 +150,6 @@
     }
 
 
-    /* Überschrift exakt mittig */
     .about h2 {
       font-family: "Bebas Neue", sans-serif;
 
@@ -167,7 +158,7 @@
 
       letter-spacing: 2px;
 
-      margin: 0 0 45px;
+      margin: 0 0 55px;
 
       color: #00d9ff;
 
@@ -196,10 +187,8 @@
 
       border-radius: 50%;
 
-      /* Weißer kompletter Rand */
       border: 5px solid white;
 
-      /* INNENBEREICH KOMPLETT WEISS */
       background-color: white;
 
       box-shadow:
@@ -213,29 +202,27 @@
 
 
     /* =========================
-       ZWEI BEREICHE NEBENEINANDER
+       EDUKI + ROVER UNTEREINANDER
     ========================= */
 
     .about-columns {
-      display: grid;
+      display: flex;
 
-      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
 
-      gap: 45px;
+      gap: 65px;
 
       width: 100%;
-
-      align-items: stretch;
     }
 
 
     .about-box {
+      width: 100%;
       min-width: 0;
 
-      padding: 10px 0;
+      padding: 0;
 
-      display: flex;
-      align-items: flex-start;
+      display: block;
     }
 
 
@@ -246,31 +233,33 @@
     .eduki-section {
       display: flex;
 
-      align-items: flex-start;
+      align-items: center;
 
-      gap: 30px;
+      gap: 45px;
 
       width: 100%;
     }
 
 
-    /* DEUTLICH GRÖSSERES EDUKI-BILD */
     .eduki-image {
-      width: 240px;
-      height: 240px;
+      width: 300px;
+      height: 300px;
 
-      flex: 0 0 240px;
+      flex: 0 0 300px;
 
       object-fit: contain;
 
       border-radius: 20px;
 
-      background-color: white;
+      /* Kein weißer Rand / kein weißer Hintergrund */
+      background: transparent;
 
-      padding: 8px;
+      padding: 0;
 
       box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.4);
+
+      display: block;
     }
 
 
@@ -278,28 +267,24 @@
       flex: 1;
       min-width: 0;
 
-      display: flex;
-      align-items: flex-start;
+      width: 100%;
     }
 
 
     /* =========================
-       IDENTISCHE TEXTFORMATIERUNG
+       TEXT
     ========================= */
 
     .about-text {
       width: 100%;
 
       margin: 0;
-
       padding: 0;
 
       font-family: Arial, sans-serif;
 
       font-size: 19px;
-
       font-weight: normal;
-
       font-style: normal;
 
       text-align: left;
@@ -338,6 +323,7 @@
 
     .rover-text {
       width: 100%;
+      max-width: none;
     }
 
 
@@ -382,21 +368,16 @@
       }
 
 
-      .about-columns {
+      .eduki-section {
         gap: 30px;
       }
 
 
-      .eduki-section {
-        gap: 20px;
-      }
-
-
       .eduki-image {
-        width: 190px;
-        height: 190px;
+        width: 250px;
+        height: 250px;
 
-        flex: 0 0 190px;
+        flex: 0 0 250px;
       }
 
     }
@@ -410,7 +391,6 @@
 
       nav {
         height: 60px;
-
         padding: 0 10px;
       }
 
@@ -421,7 +401,6 @@
         flex-direction: row;
 
         justify-content: flex-end;
-
         align-items: center;
 
         gap: 14px;
@@ -429,9 +408,7 @@
         width: 100%;
 
         margin: 0;
-        padding: 0;
-
-        padding-left: 100px;
+        padding: 0 0 0 100px;
       }
 
 
@@ -464,13 +441,12 @@
       .about h2 {
         font-size: 48px;
 
-        margin-bottom: 30px;
+        margin-bottom: 40px;
 
         text-align: center;
       }
 
 
-      /* Bild von Lukas */
       .about-me-image {
         position: relative;
 
@@ -490,13 +466,12 @@
       }
 
 
-      /* Auf Handy untereinander */
       .about-columns {
         display: flex;
 
         flex-direction: column;
 
-        gap: 40px;
+        gap: 50px;
       }
 
 
@@ -506,19 +481,26 @@
 
 
       .eduki-section {
-        flex-direction: row;
+        flex-direction: column;
 
         align-items: flex-start;
 
-        gap: 20px;
+        gap: 25px;
+
+        width: 100%;
       }
 
 
       .eduki-image {
-        width: 150px;
-        height: 150px;
+        width: 220px;
+        height: 220px;
 
-        flex: 0 0 150px;
+        flex: 0 0 220px;
+      }
+
+
+      .eduki-text {
+        width: 100%;
       }
 
 
@@ -588,15 +570,15 @@
       .eduki-section {
         flex-direction: column;
 
-        gap: 15px;
+        gap: 20px;
       }
 
 
       .eduki-image {
-        width: 145px;
-        height: 145px;
+        width: 190px;
+        height: 190px;
 
-        flex: 0 0 145px;
+        flex: 0 0 190px;
       }
 
 
@@ -672,12 +654,12 @@
     >
 
 
-    <!-- Überschrift mittig -->
     <h2>Über mich</h2>
 
 
     <!-- =========================
          EDUKI + ROVER
+         UNTEREINANDER
     ========================= -->
 
     <div class="about-columns">
@@ -700,6 +682,8 @@
               Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
               für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
               "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
+
+              <br><br>
 
               <a
                 href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
@@ -758,6 +742,8 @@
 
 </body>
 </html>
+
+
 
 
 
