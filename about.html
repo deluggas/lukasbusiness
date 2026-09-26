@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -90,10 +90,6 @@
     }
 
 
-    /* =========================
-       MENÜPUNKTE
-    ========================= */
-
     nav a {
       font-family: "Bebas Neue", sans-serif;
 
@@ -150,7 +146,15 @@
       flex: 1;
 
       padding: 100px 25px 80px;
+
+      position: relative;
+
+      max-width: 1100px;
+      width: 100%;
+
+      margin: 0 auto;
     }
+
 
     .about h2 {
       font-family: "Bebas Neue", sans-serif;
@@ -168,9 +172,80 @@
         0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
+
+    /* =========================
+       MEIN BILD
+    ========================= */
+
+    .about-me-image {
+      position: absolute;
+
+      top: 90px;
+      right: 25px;
+
+      width: 190px;
+      height: 190px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 3px solid #00d9ff;
+
+      box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.35),
+        0 8px 25px rgba(0, 0, 0, 0.5);
+
+      background-color: rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* =========================
+       EDUKI BEREICH
+    ========================= */
+
+    .eduki-section {
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+      margin-bottom: 35px;
+
+      padding-right: 230px;
+    }
+
+
+    .eduki-image {
+      width: 130px;
+      height: 130px;
+
+      object-fit: contain;
+
+      flex-shrink: 0;
+
+      border-radius: 18px;
+
+      background-color: rgba(255, 255, 255, 0.08);
+
+      padding: 8px;
+
+      box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
+
+    .eduki-text {
+      flex: 1;
+    }
+
+
     .about p {
       font-size: 19px;
+
       font-family: Arial, sans-serif;
+
       text-align: left;
 
       max-width: 600px;
@@ -180,14 +255,27 @@
       line-height: 1.7;
     }
 
+
     .about a {
       color: #00d9ff;
+
       font-weight: bold;
+
       text-decoration: none;
     }
 
+
     .about a:hover {
       color: white;
+    }
+
+
+    /* =========================
+       ROVER
+    ========================= */
+
+    .rover-section {
+      max-width: 700px;
     }
 
 
@@ -268,17 +356,57 @@
 
 
       .about {
-        padding: 70px 20px 60px;
+        padding: 75px 20px 60px;
       }
 
 
       .about h2 {
         font-size: 48px;
+
+        margin-bottom: 20px;
+      }
+
+
+      /* Mein Bild */
+      .about-me-image {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        display: block;
+
+        width: 145px;
+        height: 145px;
+
+        margin: 0 0 30px auto;
+      }
+
+
+      /* Eduki */
+      .eduki-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding-right: 0;
+
+        margin-bottom: 30px;
+      }
+
+
+      .eduki-image {
+        width: 110px;
+        height: 110px;
       }
 
 
       .about p {
         font-size: 17px;
+
+        max-width: 100%;
       }
 
     }
@@ -322,6 +450,18 @@
 
       .about h2 {
         font-size: 42px;
+      }
+
+
+      .about-me-image {
+        width: 125px;
+        height: 125px;
+      }
+
+
+      .eduki-image {
+        width: 95px;
+        height: 95px;
       }
 
     }
@@ -382,36 +522,66 @@
 
   <section class="about">
 
+    <!-- Bild von Lukas oben rechts -->
+    <img
+      src="bildlukas.png"
+      alt="Lukas"
+      class="about-me-image"
+    >
+
+
     <h2>Über mich</h2>
 
-    <p>
-      Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen für den Schulalltag.
-      Dabei konzentriere ich mich auf den Bereich "Grundschule".
-      Bitte folge mir dort, wenn du mich unterstützen willst.
 
-      <a
-        href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
-        target="_blank"
-        rel="noopener noreferrer"
+    <!-- EDUKI -->
+    <div class="eduki-section">
+
+      <img
+        src="eduki.png"
+        alt="Eduki"
+        class="eduki-image"
       >
-        Mehr auf meiner Eduki-Seite →
-      </a>
-    </p>
 
-    <p>
-      Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
-      die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
+      <div class="eduki-text">
 
-      <br>
+        <p>
+          Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
+          für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
+          "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
 
-      <a
-        href="https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Mehr auf meinem Roverr-Profil →
-      </a>
-    </p>
+          <a
+            href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mehr auf meiner Eduki-Seite →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ROVER -->
+    <div class="rover-section">
+
+      <p>
+        Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
+        die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
+
+        <br>
+
+        <a
+          href="https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mehr auf meinem Roverr-Profil →
+        </a>
+      </p>
+
+    </div>
 
   </section>
 
