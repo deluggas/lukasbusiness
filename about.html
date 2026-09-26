@@ -55,7 +55,7 @@
       z-index: 1000;
 
       width: 100%;
-      height: 52px;
+      height: 70px;
 
       background-color: rgba(0, 0, 0, 0.75);
 
@@ -98,7 +98,7 @@
       color: white;
 
       font-size: 22px;
-      line-height: 52px;
+      line-height: 70px;
 
       letter-spacing: 1px;
 
@@ -126,8 +126,8 @@
       top: 0;
       left: 0;
 
-      width: 125px;
-      height: 52px;
+      width: 250px;
+      height: 104px;
 
       object-fit: contain;
       object-position: left center;
@@ -135,6 +135,8 @@
       display: block;
 
       z-index: 1001;
+
+      pointer-events: none;
     }
 
 
@@ -152,7 +154,7 @@
 
       margin: 0 auto;
 
-      padding: 100px 25px 80px;
+      padding: 120px 25px 80px;
     }
 
 
@@ -180,27 +182,24 @@
     .about-me-image {
       position: absolute;
 
-      top: 75px;
+      top: 90px;
       right: 35px;
 
       width: 190px;
       height: 190px;
 
-      /*
-        contain verhindert, dass oben die Haare
-        durch object-fit: cover abgeschnitten werden.
-      */
       object-fit: contain;
       object-position: center center;
 
       border-radius: 50%;
 
-      border: 3px solid #00d9ff;
+      /* KOMPLETTER KREIS WEISS */
+      border: 5px solid white;
 
       background-color: rgba(0, 0, 0, 0.35);
 
       box-shadow:
-        0 0 25px rgba(0, 217, 255, 0.35),
+        0 0 25px rgba(255, 255, 255, 0.25),
         0 8px 25px rgba(0, 0, 0, 0.5);
 
       padding: 5px;
@@ -221,6 +220,8 @@
       width: 100%;
 
       padding-right: 220px;
+
+      align-items: start;
     }
 
 
@@ -247,8 +248,8 @@
 
 
     .eduki-image {
-      width: 170px;
-      height: 170px;
+      width: 200px;
+      height: 200px;
 
       flex-shrink: 0;
 
@@ -267,27 +268,32 @@
 
     .eduki-text {
       flex: 1;
+      min-width: 0;
     }
 
 
     /* =========================
-       TEXTE
+       EINHEITLICHE TEXTFORMATIERUNG
     ========================= */
 
-    .about p {
+    .about-text {
       font-size: 19px;
 
       font-family: Arial, sans-serif;
 
+      font-weight: normal;
+
       text-align: left;
 
-      margin: 0 0 25px;
-
       line-height: 1.7;
+
+      margin: 0;
+
+      max-width: none;
     }
 
 
-    .about a {
+    .about-text a {
       color: #00d9ff;
 
       font-weight: bold;
@@ -298,7 +304,7 @@
     }
 
 
-    .about a:hover {
+    .about-text a:hover {
       color: white;
     }
 
@@ -325,10 +331,16 @@
 
 
     /* =========================
-       TABLET / KLEINERE BILDSCHIRME
+       TABLET
     ========================= */
 
     @media (max-width: 1000px) {
+
+      .logo {
+        width: 210px;
+        height: 88px;
+      }
+
 
       .about-me-image {
         width: 160px;
@@ -353,8 +365,8 @@
 
 
       .eduki-image {
-        width: 145px;
-        height: 145px;
+        width: 160px;
+        height: 160px;
       }
 
     }
@@ -367,7 +379,8 @@
     @media (max-width: 700px) {
 
       nav {
-        height: 52px;
+        height: 60px;
+
         padding: 0 10px;
       }
 
@@ -388,14 +401,14 @@
         margin: 0;
         padding: 0;
 
-        padding-left: 90px;
+        padding-left: 100px;
       }
 
 
       nav a {
         font-size: 17px;
 
-        line-height: 52px;
+        line-height: 60px;
 
         letter-spacing: 0.5px;
       }
@@ -405,8 +418,8 @@
         top: 0;
         left: 0;
 
-        width: 90px;
-        height: 52px;
+        width: 150px;
+        height: 62px;
 
         object-fit: contain;
         object-position: left center;
@@ -414,7 +427,7 @@
 
 
       .about {
-        padding: 75px 20px 60px;
+        padding: 80px 20px 60px;
       }
 
 
@@ -438,13 +451,12 @@
         height: 155px;
 
         margin: 0 0 30px auto;
+
+        border-width: 5px;
       }
 
 
-      /*
-        Auf dem Handy wieder untereinander,
-        damit beide Bereiche gut lesbar bleiben.
-      */
+      /* Auf Handy untereinander */
       .about-columns {
         display: flex;
 
@@ -471,15 +483,15 @@
 
 
       .eduki-image {
-        width: 125px;
-        height: 125px;
+        width: 135px;
+        height: 135px;
       }
 
 
-      .about p {
+      .about-text {
         font-size: 17px;
 
-        max-width: 100%;
+        line-height: 1.7;
       }
 
     }
@@ -499,7 +511,7 @@
       nav ul {
         gap: 9px;
 
-        padding-left: 75px;
+        padding-left: 85px;
       }
 
 
@@ -511,7 +523,8 @@
 
 
       .logo {
-        width: 75px;
+        width: 120px;
+        height: 50px;
       }
 
 
@@ -540,8 +553,8 @@
 
 
       .eduki-image {
-        width: 115px;
-        height: 115px;
+        width: 125px;
+        height: 125px;
       }
 
     }
@@ -615,7 +628,6 @@
 
     <!-- =========================
          EDUKI + ROVER
-         PARALLEL NEBENEINANDER
     ========================= -->
 
     <div class="about-columns">
@@ -634,7 +646,7 @@
 
           <div class="eduki-text">
 
-            <p>
+            <p class="about-text">
               Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
               für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
               "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
@@ -658,7 +670,7 @@
       <!-- ROVER -->
       <div class="about-box">
 
-        <p>
+        <p class="about-text">
           Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
           die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
 
@@ -692,6 +704,7 @@
 
 </body>
 </html>
+
 
 
 
