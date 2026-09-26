@@ -1,24 +1,515 @@
-<div class="services-container">
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="service-card">
-      <h3>Email Management</h3>
-      <p>Professionelles Verwalten, Sortieren und Beantworten von E-Mails für mehr Effizienz im Alltag.</p>
+  <title>Meine Leistungen</title>
+
+  <!-- Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       GRUNDLAYOUT
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("backgroundimage.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      color: white;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 15px 30px;
+
+      backdrop-filter: blur(8px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+
+      width: 120px;
+      height: auto;
+    }
+
+
+    /* =========================
+       HAUPTBEREICH
+    ========================= */
+
+    .leistungen {
+      max-width: 1200px;
+      margin: 0 auto;
+
+      padding: 100px 25px;
+    }
+
+
+    /* =========================
+       TITEL
+    ========================= */
+
+    .leistungen-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .leistungen-header h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 64px;
+      font-weight: normal;
+      letter-spacing: 2px;
+
+      margin: 0 0 15px;
+
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .leistungen-header p {
+      max-width: 650px;
+      margin: 0 auto;
+
+      font-size: 18px;
+      line-height: 1.7;
+
+      color: #f1f1f1;
+    }
+
+
+    /* =========================
+       LEISTUNGS-KARTEN
+    ========================= */
+
+    .leistungen-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+    .leistung {
+      background: rgba(0, 0, 0, 0.65);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+
+      padding: 35px;
+
+      min-height: 270px;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+
+    /* Hover-Effekt */
+
+    .leistung:hover {
+      transform: translateY(-8px);
+
+      border-color: #00d9ff;
+
+      box-shadow:
+        0 15px 40px rgba(0, 217, 255, 0.2);
+    }
+
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .leistung-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       KARTEN-TITEL
+    ========================= */
+
+    .leistung h2 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 38px;
+      font-weight: normal;
+      letter-spacing: 1px;
+
+      margin: 0 0 15px;
+
+      color: white;
+    }
+
+
+    /* =========================
+       KARTEN-TEXT
+    ========================= */
+
+    .leistung p {
+      font-family: Arial, sans-serif;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #e8e8e8;
+
+      margin: 0 0 20px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .leistung-button {
+      display: inline-block;
+
+      padding: 10px 20px;
+
+      border: 1px solid #00d9ff;
+      border-radius: 25px;
+
+      color: white;
+      text-decoration: none;
+
+      font-weight: bold;
+      font-size: 14px;
+
+      transition: 0.3s ease;
+    }
+
+    .leistung-button:hover {
+      background-color: #00d9ff;
+      color: black;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 30px 20px;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 0;
+
+      font-size: 14px;
+      color: #ccc;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .logo {
+        position: relative;
+
+        display: block;
+
+        top: auto;
+        left: auto;
+
+        margin: 0 auto 15px;
+
+        width: 100px;
+      }
+
+      .leistungen {
+        padding: 70px 20px;
+      }
+
+      .leistungen-header h1 {
+        font-size: 48px;
+      }
+
+      .leistungen-header p {
+        font-size: 16px;
+      }
+
+      .leistungen-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leistung {
+        padding: 28px;
+      }
+
+      .leistung h2 {
+        font-size: 34px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <img
+      src="logoone.png"
+      alt="Lukas Business"
+      class="logo"
+    >
+
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">Über mich</a>
+      </li>
+
+      <li>
+        <a href="services.html">Leistungen</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Kontakt</a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+
+  <!-- =========================
+       LEISTUNGEN
+  ========================= -->
+
+  <main class="leistungen">
+
+
+    <div class="leistungen-header">
+
+      <h1>Meine Leistungen</h1>
+
+      <p>
+        Ich biete verschiedene Dienstleistungen an und unterstütze
+        dich sowohl im digitalen Bereich als auch im Alltag.
+        Dabei lege ich Wert auf zuverlässige Arbeit, persönliche Betreuung
+        und Lösungen, die zu deinen individuellen Bedürfnissen passen.
+      </p>
+
     </div>
 
-    <div class="service-card">
-      <h3>Design & Verfassen von Lebensläufen</h3>
-      <p>Moderne, ansprechende Lebensläufe, die deine Stärken optimal präsentieren und überzeugen.</p>
+
+
+    <!-- =========================
+         LEISTUNGS-KARTEN
+    ========================= -->
+
+    <div class="leistungen-grid">
+
+
+      <!-- Nachhilfe -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          📚
+        </div>
+
+        <h2>Nachhilfe geben</h2>
+
+        <p>
+          Du hast Schwierigkeiten in einem bestimmten Fach oder möchtest
+          deine Leistungen verbessern? Ich unterstütze dich beim Lernen,
+          erkläre schwierige Themen verständlich und helfe dir dabei,
+          Schritt für Schritt sicherer zu werden.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Mehr erfahren
+        </a>
+
+      </section>
+
+
+
+      <!-- Websites -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          💻
+        </div>
+
+        <h2>Websites bauen</h2>
+
+        <p>
+          Du möchtest eine eigene Website für dich, dein Projekt oder
+          dein Unternehmen? Ich erstelle moderne und übersichtliche
+          Websites, die auf verschiedenen Geräten funktionieren und
+          einen professionellen Eindruck vermitteln.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Website anfragen
+        </a>
+
+      </section>
+
+
+
+      <!-- Dogwalking -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          🐕
+        </div>
+
+        <h2>Dogwalking</h2>
+
+        <p>
+          Dein Hund braucht Bewegung und Gesellschaft, während du
+          beschäftigt bist? Beim Dogwalking kümmere ich mich zuverlässig
+          um deinen Vierbeiner und sorge für einen abwechslungsreichen
+          Spaziergang an der frischen Luft.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Spaziergang anfragen
+        </a>
+
+      </section>
+
+
+
+      <!-- Social Media -->
+
+      <section class="leistung">
+
+        <div class="leistung-icon">
+          📱
+        </div>
+
+        <h2>Social Media Management</h2>
+
+        <p>
+          Du möchtest auf Social Media professioneller auftreten, hast
+          aber nicht genug Zeit für die regelmäßige Pflege deiner Kanäle?
+          Ich unterstütze dich bei der Planung und Erstellung von Inhalten
+          sowie bei einem einheitlichen und ansprechenden Auftritt.
+        </p>
+
+        <a href="contact.html" class="leistung-button">
+          Social Media anfragen
+        </a>
+
+      </section>
+
+
     </div>
 
-    <div class="service-card">
-      <h3>Instagram Marketing</h3>
-      <p>Aufbau und Betreuung von Instagram-Accounts mit regelmäßigen, strategischen Posts zur Reichweitensteigerung.</p>
-    </div>
+  </main>
 
-    <div class="service-card">
-      <h3>Korrekturlesen</h3>
-      <p>Grammatik-, Rechtschreib- und Stilkorrektur für Texte aller Art – klar, professionell und fehlerfrei.</p>
-    </div>
 
-  </div>
-</section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Lukas Business – Alle Rechte vorbehalten.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
+```
