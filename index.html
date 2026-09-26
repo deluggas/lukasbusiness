@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -33,7 +34,6 @@
 
     /* =========================
        MENÜBAND
-       EXAKT WIE CONTACT.HTML
        ========================= */
 
     nav {
@@ -41,7 +41,7 @@
       top: 0;
       z-index: 1000;
       width: 100%;
-      height: 52px;
+      height: 104px;
       background-color: rgba(0, 0, 0, 0.75);
       padding: 0 30px;
       display: flex;
@@ -65,7 +65,7 @@
       text-decoration: none;
       color: white;
       font-size: 22px;
-      line-height: 52px;
+      line-height: 104px;
       letter-spacing: 1px;
       transition: color 0.3s ease;
     }
@@ -82,8 +82,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 125px;
-      height: 52px;
+      width: 250px;
+      height: 104px;
       object-fit: contain;
       object-position: left center;
       display: block;
@@ -95,7 +95,7 @@
        ========================= */
 
     .hero {
-      min-height: calc(100vh - 52px);
+      min-height: calc(100vh - 104px);
       display: flex;
       align-items: center;
       position: relative;
@@ -425,7 +425,7 @@
     @media (max-width: 700px) {
 
       nav {
-        height: 52px;
+        height: 104px;
         padding: 0 10px;
       }
 
@@ -438,27 +438,27 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        padding-left: 90px;
+        padding-left: 180px;
       }
 
       nav a {
         font-size: 17px;
-        line-height: 52px;
+        line-height: 104px;
         letter-spacing: 0.5px;
       }
 
       .logo {
         top: 0;
         left: 0;
-        width: 90px;
-        height: 52px;
+        width: 180px;
+        height: 104px;
         object-fit: contain;
         object-position: left center;
         transform: none;
       }
 
       .hero {
-        min-height: calc(100vh - 52px);
+        min-height: calc(100vh - 104px);
       }
 
       .hero-content {
@@ -495,21 +495,28 @@
     @media (max-width: 450px) {
 
       nav {
+        height: 90px;
         padding: 0 8px;
       }
 
       nav ul {
         gap: 9px;
-        padding-left: 75px;
+        padding-left: 135px;
       }
 
       nav a {
         font-size: 15px;
+        line-height: 90px;
         letter-spacing: 0;
       }
 
       .logo {
-        width: 75px;
+        width: 150px;
+        height: 90px;
+      }
+
+      .hero {
+        min-height: calc(100vh - 90px);
       }
 
       .hero-content {
@@ -881,3 +888,5 @@
 
 </body>
 </html>
+
+
