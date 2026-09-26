@@ -22,6 +22,7 @@
     body {
       margin: 0;
       padding: 0;
+      min-height: 100%;
     }
 
     body {
@@ -36,6 +37,9 @@
       min-height: 100vh;
 
       color: white;
+
+      display: flex;
+      flex-direction: column;
     }
 
 
@@ -111,8 +115,6 @@
     }
 
 
-    /* Aktive Seite */
-
     nav a.active {
       color: #00d9ff;
     }
@@ -145,6 +147,8 @@
     ========================= */
 
     .about {
+      flex: 1;
+
       padding: 100px 25px 80px;
     }
 
@@ -184,6 +188,27 @@
 
     .about a:hover {
       color: white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      width: 100%;
+
+      background-color: rgba(0, 0, 0, 0.75);
+
+      text-align: center;
+
+      padding: 18px 20px;
+
+      font-size: 14px;
+
+      color: white;
+
+      backdrop-filter: blur(8px);
     }
 
 
@@ -314,13 +339,11 @@
 
   <nav>
 
-    <!-- Logo -->
     <img
       src="logoone.png"
       alt="Lukas Business Logo"
       class="logo"
     >
-
 
     <ul>
 
@@ -393,8 +416,20 @@
   </section>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Lukas Business – Alle Rechte vorbehalten.
+  </footer>
+
+
 </body>
 </html>
-```
+
+
+
+
 
 
