@@ -1,16 +1,18 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Meine Leistungen</title>
+  <title>Leistungen | Lukas Business</title>
 
   <!-- Bebas Neue -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -22,8 +24,13 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
 
       background-image: url("backgroundimage.png");
@@ -33,63 +40,83 @@
       background-repeat: no-repeat;
 
       min-height: 100vh;
+
       color: white;
     }
 
 
     /* =========================
        NAVIGATION
+       IDENTISCH WIE KONTAKT
     ========================= */
 
     nav {
       position: sticky;
       top: 0;
-      left: 0;
       z-index: 1000;
 
       width: 100%;
-      height: 65px;
+      height: 52px;
 
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.75);
+
+      padding: 0 30px;
 
       display: flex;
       align-items: center;
-      justify-content: center;
 
-      padding: 0 20px;
+      backdrop-filter: blur(8px);
     }
+
 
     nav ul {
       list-style: none;
 
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
-      gap: 45px;
+      gap: 35px;
+
+      width: 100%;
 
       margin: 0;
       padding: 0;
     }
 
+
+    nav li {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* =========================
+       MENÜPUNKTE
+    ========================= */
+
     nav a {
+      font-family: "Bebas Neue", sans-serif;
+
       text-decoration: none;
 
       color: white;
 
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 24px;
-      font-weight: normal;
-      letter-spacing: 1.5px;
+      font-size: 22px;
+      line-height: 52px;
 
-      line-height: 65px;
+      letter-spacing: 1px;
 
-      transition: 0.3s ease;
+      transition: color 0.3s ease;
     }
+
 
     nav a:hover {
       color: #00d9ff;
     }
+
+
+    /* Aktive Seite */
 
     nav a.active {
       color: #00d9ff;
@@ -98,6 +125,7 @@
 
     /* =========================
        LOGO
+       IDENTISCH WIE KONTAKT
     ========================= */
 
     .logo {
@@ -106,16 +134,20 @@
       top: 0;
       left: 0;
 
-      width: 145px;
-      height: 65px;
+      width: 125px;
+      height: 52px;
 
       object-fit: contain;
       object-position: left center;
+
+      display: block;
+
+      z-index: 1001;
     }
 
 
     /* =========================
-       HAUPTBEREICH
+       LEISTUNGEN
     ========================= */
 
     .leistungen {
@@ -123,12 +155,12 @@
 
       margin: 0 auto;
 
-      padding: 100px 25px;
+      padding: 100px 25px 80px;
     }
 
 
     /* =========================
-       TITEL
+       ÜBERSCHRIFT
     ========================= */
 
     .leistungen-header {
@@ -136,6 +168,7 @@
 
       margin-bottom: 60px;
     }
+
 
     .leistungen-header h1 {
       font-family: "Bebas Neue", sans-serif;
@@ -149,15 +182,20 @@
 
       color: #00d9ff;
 
-      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
+
     .leistungen-header p {
-      max-width: 650px;
+      max-width: 700px;
 
       margin: 0 auto;
 
+      font-family: Arial, sans-serif;
+
       font-size: 18px;
+
       line-height: 1.7;
 
       color: #f1f1f1;
@@ -176,6 +214,7 @@
       gap: 30px;
     }
 
+
     .leistung {
       background: rgba(0, 0, 0, 0.65);
 
@@ -189,13 +228,15 @@
 
       backdrop-filter: blur(10px);
 
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
 
       transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
     }
+
 
     .leistung:hover {
       transform: translateY(-8px);
@@ -219,7 +260,7 @@
 
 
     /* =========================
-       KARTEN-TITEL
+       KARTEN-ÜBERSCHRIFT
     ========================= */
 
     .leistung h2 {
@@ -244,6 +285,7 @@
       font-family: Arial, sans-serif;
 
       font-size: 16px;
+
       line-height: 1.7;
 
       color: #e8e8e8;
@@ -270,11 +312,14 @@
       text-decoration: none;
 
       font-family: "Bebas Neue", sans-serif;
+
       font-size: 17px;
+
       letter-spacing: 0.5px;
 
       transition: 0.3s ease;
     }
+
 
     .leistung-button:hover {
       background-color: #00d9ff;
@@ -294,11 +339,14 @@
 
       background: rgba(0, 0, 0, 0.7);
 
-      margin-top: 50px;
+      margin-top: 20px;
     }
+
 
     footer p {
       margin: 0;
+
+      font-family: Arial, sans-serif;
 
       font-size: 14px;
 
@@ -308,62 +356,147 @@
 
     /* =========================
        MOBILE
+       IDENTISCH WIE KONTAKT
     ========================= */
 
     @media (max-width: 700px) {
 
       nav {
-        height: 60px;
+        height: 52px;
 
         padding: 0 10px;
       }
 
+
       nav ul {
+        display: flex;
+
         flex-direction: row;
 
         justify-content: flex-end;
 
-        gap: 16px;
+        align-items: center;
 
-        padding-left: 95px;
+        gap: 14px;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+        padding-left: 90px;
       }
+
 
       nav a {
-        font-size: 18px;
+        font-size: 17px;
 
-        line-height: 60px;
+        line-height: 52px;
+
+        letter-spacing: 0.5px;
       }
+
 
       .logo {
-        width: 90px;
-        height: 60px;
-
         top: 0;
         left: 0;
+
+        width: 90px;
+        height: 52px;
+
+        object-fit: contain;
+        object-position: left center;
+
+        transform: none;
       }
 
+
       .leistungen {
-        padding: 70px 20px;
+        padding: 70px 20px 60px;
       }
+
+
+      .leistungen-header {
+        margin-bottom: 40px;
+      }
+
 
       .leistungen-header h1 {
         font-size: 48px;
       }
 
+
       .leistungen-header p {
         font-size: 16px;
       }
 
+
       .leistungen-grid {
         grid-template-columns: 1fr;
+
+        gap: 20px;
       }
+
 
       .leistung {
         padding: 28px;
+
+        min-height: auto;
       }
+
 
       .leistung h2 {
         font-size: 34px;
+      }
+
+
+      .leistung-icon {
+        font-size: 38px;
+      }
+
+    }
+
+
+    /* =========================
+       SEHR KLEINE HANDYS
+       IDENTISCH WIE KONTAKT
+    ========================= */
+
+    @media (max-width: 450px) {
+
+      nav {
+        padding: 0 8px;
+      }
+
+
+      nav ul {
+        gap: 9px;
+
+        padding-left: 75px;
+      }
+
+
+      nav a {
+        font-size: 15px;
+
+        letter-spacing: 0;
+      }
+
+
+      .logo {
+        width: 75px;
+      }
+
+
+      .leistungen {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+
+      .leistungen-header h1 {
+        font-size: 42px;
       }
 
     }
@@ -377,32 +510,45 @@
 
   <!-- =========================
        NAVIGATION
-  ========================= -->
+    ========================= -->
 
   <nav>
 
+    <!-- Logo -->
     <img
       src="logoone.png"
-      alt="Lukas Business"
+      alt="Lukas Business Logo"
       class="logo"
     >
+
 
     <ul>
 
       <li>
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
       </li>
 
-      <li>
-        <a href="about.html">Über mich</a>
-      </li>
 
       <li>
-        <a href="services.html" class="active">Leistungen</a>
+        <a href="about.html">
+          Über mich
+        </a>
       </li>
 
+
       <li>
-        <a href="contact.html">Kontakt</a>
+        <a href="services.html" class="active">
+          Leistungen
+        </a>
+      </li>
+
+
+      <li>
+        <a href="contact.html">
+          Kontakt
+        </a>
       </li>
 
     </ul>
@@ -415,6 +561,7 @@
   ========================= -->
 
   <main class="leistungen">
+
 
     <div class="leistungen-header">
 
@@ -437,7 +584,9 @@
     <div class="leistungen-grid">
 
 
-      <!-- Nachhilfe -->
+      <!-- =========================
+           NACHHILFE
+      ========================= -->
 
       <section class="leistung">
 
@@ -454,14 +603,19 @@
           Schritt für Schritt sicherer zu werden.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           Nachhilfe anfragen
         </a>
 
       </section>
 
 
-      <!-- Websites -->
+      <!-- =========================
+           WEBSITES
+      ========================= -->
 
       <section class="leistung">
 
@@ -478,14 +632,19 @@
           einen professionellen Eindruck vermitteln.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           Website anfragen
         </a>
 
       </section>
 
 
-      <!-- Dogwalking -->
+      <!-- =========================
+           DOGWALKING
+      ========================= -->
 
       <section class="leistung">
 
@@ -502,14 +661,19 @@
           Spaziergang an der frischen Luft.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           Spaziergang mit Hund anfragen
         </a>
 
       </section>
 
 
-      <!-- Social Media -->
+      <!-- =========================
+           SOCIAL MEDIA
+      ========================= -->
 
       <section class="leistung">
 
@@ -526,14 +690,19 @@
           sowie bei einem einheitlichen und ansprechenden Auftritt.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           Social Media Management anfragen
         </a>
 
       </section>
 
 
-      <!-- E-Mail Management -->
+      <!-- =========================
+           E-MAIL MANAGEMENT
+      ========================= -->
 
       <section class="leistung">
 
@@ -550,14 +719,19 @@
           Bearbeitung und Strukturierung deiner E-Mails.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           E-Mail Management anfragen
         </a>
 
       </section>
 
 
-      <!-- Babysitting -->
+      <!-- =========================
+           BABYSITTING
+      ========================= -->
 
       <section class="leistung">
 
@@ -573,7 +747,10 @@
           um deine Kinder und sorge für eine angenehme und sichere Zeit.
         </p>
 
-        <a href="contact.html" class="leistung-button">
+        <a
+          href="contact.html"
+          class="leistung-button"
+        >
           Babysitting anfragen
         </a>
 
@@ -592,7 +769,7 @@
   <footer>
 
     <p>
-      © 2026 Lukas Business – Alle Rechte vorbehalten.
+      © 2026 Lukas Business. Alle Rechte vorbehalten.
     </p>
 
   </footer>
@@ -600,6 +777,5 @@
 
 </body>
 </html>
-```
 
 
