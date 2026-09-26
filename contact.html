@@ -1,18 +1,591 @@
- <p>
-    📧 E-Mail: 
-    <a href="mailto:lukas.h.wagner@gmail.com">
-      lukas.h.wagner@gmail.com
-    </a>
-  </p>
+ ```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <p>
-    📱 Telefon & WhatsApp: 
-    <a href="tel:+491706879346">
-      0170 6879346
-    </a>
-  </p>
+  <title>Kontakt | Lukas Business</title>
 
-  <p>
-    Ich bin auch über WhatsApp erreichbar.
-  </p>
-</section>
+  <!-- Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       GRUNDLAYOUT
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      background-image: url("backgroundimage.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+
+      min-height: 100vh;
+      color: white;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      min-height: 75px;
+
+      background-color: rgba(0, 0, 0, 0.75);
+
+      padding: 18px 30px;
+
+      backdrop-filter: blur(8px);
+    }
+
+
+    nav ul {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 35px;
+
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* Menüpunkte in Bebas Neue */
+
+    nav a {
+      font-family: "Bebas Neue", sans-serif;
+
+      text-decoration: none;
+      color: white;
+
+      font-size: 22px;
+      letter-spacing: 1px;
+
+      transition: 0.3s ease;
+    }
+
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+
+    /* Aktive Seite */
+
+    nav a.active {
+      color: #00d9ff;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+      position: absolute;
+
+      top: 12px;
+      left: 20px;
+
+      width: 125px;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* =========================
+       KONTAKTBEREICH
+    ========================= */
+
+    .kontakt {
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 100px 25px 80px;
+    }
+
+
+    /* =========================
+       ÜBERSCHRIFT
+    ========================= */
+
+    .kontakt-header {
+      text-align: center;
+
+      margin-bottom: 55px;
+    }
+
+
+    .kontakt-header h1 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 64px;
+      font-weight: normal;
+
+      letter-spacing: 2px;
+
+      margin: 0 0 15px;
+
+      text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .kontakt-header p {
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 18px;
+      line-height: 1.7;
+
+      color: #f1f1f1;
+    }
+
+
+    /* =========================
+       KONTAKT-KARTEN
+    ========================= */
+
+    .kontakt-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+
+    .kontakt-card {
+      background: rgba(0, 0, 0, 0.65);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 18px;
+
+      padding: 35px;
+
+      min-height: 260px;
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+
+    .kontakt-card:hover {
+      transform: translateY(-8px);
+
+      border-color: #00d9ff;
+
+      box-shadow:
+        0 15px 40px rgba(0, 217, 255, 0.2);
+    }
+
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .kontakt-icon {
+      font-size: 42px;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       KARTEN ÜBERSCHRIFT
+    ========================= */
+
+    .kontakt-card h2 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 38px;
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      margin: 0 0 15px;
+
+      color: white;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .kontakt-card p {
+      font-family: Arial, sans-serif;
+
+      font-size: 16px;
+
+      line-height: 1.7;
+
+      color: #e8e8e8;
+
+      margin: 0 0 12px;
+    }
+
+
+    /* =========================
+       KONTAKT-LINKS
+    ========================= */
+
+    .kontakt-link {
+      display: inline-block;
+
+      color: #00d9ff;
+
+      font-family: Arial, sans-serif;
+
+      font-weight: bold;
+
+      text-decoration: none;
+
+      font-size: 17px;
+
+      margin-top: 5px;
+
+      transition: 0.3s ease;
+    }
+
+
+    .kontakt-link:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       ERREICHBARKEIT
+    ========================= */
+
+    .erreichbarkeit {
+      grid-column: 1 / -1;
+
+      text-align: center;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      border-radius: 18px;
+
+      padding: 30px;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      backdrop-filter: blur(8px);
+    }
+
+
+    .erreichbarkeit h2 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 36px;
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      margin: 0 0 12px;
+    }
+
+
+    .erreichbarkeit p {
+      font-family: Arial, sans-serif;
+
+      font-size: 16px;
+
+      line-height: 1.7;
+
+      color: #e8e8e8;
+
+      max-width: 700px;
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       WHATSAPP HINWEIS
+    ========================= */
+
+    .whatsapp-hinweis {
+      margin-top: 20px;
+
+      font-weight: bold;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 30px 20px;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      margin-top: 20px;
+    }
+
+
+    footer p {
+      margin: 0;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      color: #ccc;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        min-height: auto;
+
+        padding: 15px;
+      }
+
+
+      nav ul {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding-top: 70px;
+      }
+
+
+      .logo {
+        top: 12px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 100px;
+      }
+
+
+      .kontakt {
+        padding: 70px 20px 60px;
+      }
+
+
+      .kontakt-header h1 {
+        font-size: 48px;
+      }
+
+
+      .kontakt-header p {
+        font-size: 16px;
+      }
+
+
+      .kontakt-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .erreichbarkeit {
+        grid-column: auto;
+      }
+
+
+      .kontakt-card {
+        padding: 28px;
+      }
+
+
+      .kontakt-card h2 {
+        font-size: 34px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <!-- Logo -->
+    <img
+      src="logoone.png"
+      alt="Lukas Business Logo"
+      class="logo"
+    >
+
+
+    <ul>
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          Über mich
+        </a>
+      </li>
+
+      <li>
+        <a href="services.html">
+          Leistungen
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html" class="active">
+          Kontakt
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+
+  <!-- =========================
+       KONTAKT
+  ========================= -->
+
+  <main class="kontakt">
+
+
+    <div class="kontakt-header">
+
+      <h1>Kontakt</h1>
+
+      <p>
+        Du hast Fragen, möchtest eine meiner Leistungen in Anspruch nehmen
+        oder hast eine Idee für ein gemeinsames Projekt?
+        Dann kannst du mich gerne kontaktieren.
+        Ich freue mich auf deine Nachricht!
+      </p>
+
+    </div>
+
+
+
+    <div class="kontakt-grid">
+
+
+      <!-- E-Mail -->
+
+      <section class="kontakt-card">
+
+        <div class="kontakt-icon">
+          📧
+        </div>
+
+        <h2>E-Mail</h2>
+
+        <p>
+          Du kannst mir jederzeit eine E-Mail schreiben.
+          E-Mails kann ich rund um die Uhr empfangen und
+          beantworte sie so schnell wie möglich.
+        </p>
+
+        <a
+          href="mailto:lukas.h.wagner@gmail.com"
+          class="kontakt-link"
+        >
+          lukas.h.wagner@gmail.com
+        </a>
+
+      </section>
+
+
+
+      <!-- Telefon -->
+
+      <section class="kontakt-card">
+
+        <div class="kontakt-icon">
+          📱
+        </div>
+
+        <h2>Telefon & WhatsApp</h2>
+
+        <p>
+          Du möchtest lieber direkt mit mir sprechen?
+          Du erreichst mich telefonisch überwiegend morgens
+          und abends.
+        </p>
+
+        <a
+          href="tel:+491706879346"
+          class="kontakt-link"
+        >
+          0170 6879346
+        </a>
+
+        <p class="whatsapp-hinweis">
+          💬 Ich bin auch über WhatsApp erreichbar.
+        </p>
+
+      </section>
+
+
+
+      <!-- Erreichbarkeit -->
+
+      <section class="erreichbarkeit">
+
+        <h2>Meine Erreichbarkeit</h2>
+
+        <p>
+          Telefonisch bin ich überwiegend morgens und abends erreichbar.
+          Wenn du mich außerhalb dieser Zeiten kontaktieren möchtest,
+          kannst du mir jederzeit eine E-Mail schreiben.
+```
