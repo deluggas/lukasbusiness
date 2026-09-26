@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meine Website</title>
@@ -10,7 +9,6 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-
       background-image: url("backgroundimage.png");
       background-size: cover;
       background-position: center;
@@ -43,6 +41,15 @@
       color: #00d9ff;
     }
 
+    /* Logo */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 150px;
+      height: auto;
+    }
+
     /* Inhalt */
     header {
       text-align: center;
@@ -69,6 +76,10 @@
       header h1 {
         font-size: 32px;
       }
+
+      .logo {
+        width: 100px;
+      }
     }
   </style>
 </head>
@@ -81,42 +92,19 @@
       <li><a href="about.html">Über mich</a></li>
       <li><a href="services.html">Leistungen</a></li>
       <li><a href="contact.html">Kontakt</a></li>
-
     </ul>
   </nav>
 
+  <img
+    src="logoone.png"
+    alt="Lukas Business"
+    class="logo"
+  >
 
   <header>
     <h1>Willkommen auf meiner Website</h1>
     <p>Das ist mein erstes Design 😊</p>
   </header>
 
-  <img
-  src="/logoone.png"
-  alt="Lukas Business"
-  style={{
-    position: "absolute",
-    top: "20px",
-    left: "20px",
-    width: "150px",
-    height: "auto"
-  }}
-/>
 </body>
 </html>
-📌 Wichtig (damit es wirklich funktioniert)
-
-Lege diese Datei so ab:
-
-index.html
-backgroundimage.png
-🚀 Wenn du als nächstes willst
-
-Ich kann dir helfen, das direkt zu verbessern zu:
-
-sticky Menü (bleibt oben beim Scrollen)
-schöner Button
-moderner Look (wie echte Website)
-Animationen
-
-Sag einfach 👍
