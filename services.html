@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -28,6 +29,7 @@
     body {
       margin: 0;
       padding: 0;
+      min-height: 100%;
     }
 
     body {
@@ -47,16 +49,18 @@
 
     /* =========================
        NAVIGATION
-       IDENTISCH WIE KONTAKT
+       IDENTISCH WIE ABOUT
     ========================= */
 
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+
       z-index: 1000;
 
       width: 100%;
-      height: 52px;
+      height: 70px;
 
       background-color: rgba(0, 0, 0, 0.75);
 
@@ -91,10 +95,6 @@
     }
 
 
-    /* =========================
-       MENÜPUNKTE
-    ========================= */
-
     nav a {
       font-family: "Bebas Neue", sans-serif;
 
@@ -103,7 +103,7 @@
       color: white;
 
       font-size: 22px;
-      line-height: 52px;
+      line-height: 70px;
 
       letter-spacing: 1px;
 
@@ -116,8 +116,6 @@
     }
 
 
-    /* Aktive Seite */
-
     nav a.active {
       color: #00d9ff;
     }
@@ -125,7 +123,7 @@
 
     /* =========================
        LOGO
-       IDENTISCH WIE KONTAKT
+       IDENTISCH WIE ABOUT
     ========================= */
 
     .logo {
@@ -134,8 +132,8 @@
       top: 0;
       left: 0;
 
-      width: 125px;
-      height: 52px;
+      width: 250px;
+      height: 104px;
 
       object-fit: contain;
       object-position: left center;
@@ -143,6 +141,8 @@
       display: block;
 
       z-index: 1001;
+
+      pointer-events: none;
     }
 
 
@@ -155,7 +155,7 @@
 
       margin: 0 auto;
 
-      padding: 100px 25px 80px;
+      padding: 120px 25px 80px;
     }
 
 
@@ -356,13 +356,13 @@
 
     /* =========================
        MOBILE
-       IDENTISCH WIE KONTAKT
+       IDENTISCH WIE ABOUT
     ========================= */
 
     @media (max-width: 700px) {
 
       nav {
-        height: 52px;
+        height: 60px;
 
         padding: 0 10px;
       }
@@ -382,17 +382,16 @@
         width: 100%;
 
         margin: 0;
-
         padding: 0;
 
-        padding-left: 90px;
+        padding-left: 100px;
       }
 
 
       nav a {
         font-size: 17px;
 
-        line-height: 52px;
+        line-height: 60px;
 
         letter-spacing: 0.5px;
       }
@@ -402,18 +401,16 @@
         top: 0;
         left: 0;
 
-        width: 90px;
-        height: 52px;
+        width: 150px;
+        height: 62px;
 
         object-fit: contain;
         object-position: left center;
-
-        transform: none;
       }
 
 
       .leistungen {
-        padding: 70px 20px 60px;
+        padding: 80px 20px 60px;
       }
 
 
@@ -460,12 +457,14 @@
 
     /* =========================
        SEHR KLEINE HANDYS
-       IDENTISCH WIE KONTAKT
+       IDENTISCH WIE ABOUT
     ========================= */
 
     @media (max-width: 450px) {
 
       nav {
+        height: 50px;
+
         padding: 0 8px;
       }
 
@@ -473,23 +472,28 @@
       nav ul {
         gap: 9px;
 
-        padding-left: 75px;
+        padding-left: 85px;
       }
 
 
       nav a {
         font-size: 15px;
 
+        line-height: 50px;
+
         letter-spacing: 0;
       }
 
 
       .logo {
-        width: 75px;
+        width: 120px;
+        height: 50px;
       }
 
 
       .leistungen {
+        padding-top: 70px;
+
         padding-left: 15px;
         padding-right: 15px;
       }
@@ -510,11 +514,10 @@
 
   <!-- =========================
        NAVIGATION
-    ========================= -->
+  ========================= -->
 
   <nav>
 
-    <!-- Logo -->
     <img
       src="logoone.png"
       alt="Lukas Business Logo"
@@ -584,9 +587,7 @@
     <div class="leistungen-grid">
 
 
-      <!-- =========================
-           NACHHILFE
-      ========================= -->
+      <!-- NACHHILFE -->
 
       <section class="leistung">
 
@@ -613,9 +614,7 @@
       </section>
 
 
-      <!-- =========================
-           WEBSITES
-      ========================= -->
+      <!-- WEBSITES -->
 
       <section class="leistung">
 
@@ -642,9 +641,7 @@
       </section>
 
 
-      <!-- =========================
-           DOGWALKING
-      ========================= -->
+      <!-- DOGWALKING -->
 
       <section class="leistung">
 
@@ -671,9 +668,7 @@
       </section>
 
 
-      <!-- =========================
-           SOCIAL MEDIA
-      ========================= -->
+      <!-- SOCIAL MEDIA -->
 
       <section class="leistung">
 
@@ -700,9 +695,7 @@
       </section>
 
 
-      <!-- =========================
-           E-MAIL MANAGEMENT
-      ========================= -->
+      <!-- E-MAIL MANAGEMENT -->
 
       <section class="leistung">
 
@@ -729,9 +722,7 @@
       </section>
 
 
-      <!-- =========================
-           BABYSITTING
-      ========================= -->
+      <!-- BABYSITTING -->
 
       <section class="leistung">
 
