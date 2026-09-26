@@ -1,15 +1,396 @@
-<section class="about">
-  <style> @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); .about h2 { font-family: 'Bebas Neue', sans-serif; } </style>
-  <h2>Über mich</h2>
-<p style="font-size: 19px; font-family: Arial; text-align: left; max-width: 600px;
-    margin: 0;">
-    Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen für den Schulalltag. Dabei konzentriere ich mich auf den Bereich "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
-    <a href="https://eduki.com/de/autor/4473605/lukas-wagner-2001" target="_blank" rel="noopener noreferrer">
-      Mehr auf meiner Eduki-Seite →
-    </a>
-  </p>
- <p style="font-size: 19px; font-family: Arial; text-align: left; max-width: 600px;
-    margin: 0;">
-   Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund, die in der Nähe von meinem Heimatort 67165 Waldsee wohnen. 
-  https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/
-</section>
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Über mich | Lukas Business</title>
+
+  <!-- Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+
+      background-image: url("backgroundimage.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+
+      min-height: 100vh;
+
+      color: white;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      width: 100%;
+      height: 52px;
+
+      background-color: rgba(0, 0, 0, 0.75);
+
+      padding: 0 30px;
+
+      display: flex;
+      align-items: center;
+
+      backdrop-filter: blur(8px);
+    }
+
+
+    nav ul {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 35px;
+
+      width: 100%;
+
+      margin: 0;
+      padding: 0;
+    }
+
+
+    nav li {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* =========================
+       MENÜPUNKTE
+    ========================= */
+
+    nav a {
+      font-family: "Bebas Neue", sans-serif;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-size: 22px;
+      line-height: 52px;
+
+      letter-spacing: 1px;
+
+      transition: color 0.3s ease;
+    }
+
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+
+    /* Aktive Seite */
+
+    nav a.active {
+      color: #00d9ff;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 125px;
+      height: 52px;
+
+      object-fit: contain;
+      object-position: left center;
+
+      display: block;
+
+      z-index: 1001;
+    }
+
+
+    /* =========================
+       ÜBER MICH
+    ========================= */
+
+    .about {
+      padding: 100px 25px 80px;
+    }
+
+    .about h2 {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 64px;
+      font-weight: normal;
+
+      letter-spacing: 2px;
+
+      margin: 0 0 30px;
+
+      color: #00d9ff;
+
+      text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .about p {
+      font-size: 19px;
+      font-family: Arial, sans-serif;
+      text-align: left;
+
+      max-width: 600px;
+
+      margin: 0 0 25px;
+
+      line-height: 1.7;
+    }
+
+    .about a {
+      color: #00d9ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .about a:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        height: 52px;
+        padding: 0 10px;
+      }
+
+
+      nav ul {
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+        align-items: center;
+
+        gap: 14px;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        padding-left: 90px;
+      }
+
+
+      nav a {
+        font-size: 17px;
+
+        line-height: 52px;
+
+        letter-spacing: 0.5px;
+      }
+
+
+      .logo {
+        top: 0;
+        left: 0;
+
+        width: 90px;
+        height: 52px;
+
+        object-fit: contain;
+        object-position: left center;
+
+        transform: none;
+      }
+
+
+      .about {
+        padding: 70px 20px 60px;
+      }
+
+
+      .about h2 {
+        font-size: 48px;
+      }
+
+
+      .about p {
+        font-size: 17px;
+      }
+
+    }
+
+
+    /* =========================
+       SEHR KLEINE HANDYS
+    ========================= */
+
+    @media (max-width: 450px) {
+
+      nav {
+        padding: 0 8px;
+      }
+
+
+      nav ul {
+        gap: 9px;
+
+        padding-left: 75px;
+      }
+
+
+      nav a {
+        font-size: 15px;
+
+        letter-spacing: 0;
+      }
+
+
+      .logo {
+        width: 75px;
+      }
+
+
+      .about {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+
+      .about h2 {
+        font-size: 42px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <!-- Logo -->
+    <img
+      src="logoone.png"
+      alt="Lukas Business Logo"
+      class="logo"
+    >
+
+
+    <ul>
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html" class="active">
+          Über mich
+        </a>
+      </li>
+
+      <li>
+        <a href="services.html">
+          Leistungen
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Kontakt
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- =========================
+       ÜBER MICH
+  ========================= -->
+
+  <section class="about">
+
+    <h2>Über mich</h2>
+
+    <p>
+      Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen für den Schulalltag.
+      Dabei konzentriere ich mich auf den Bereich "Grundschule".
+      Bitte folge mir dort, wenn du mich unterstützen willst.
+
+      <a
+        href="https://eduki.com/de/autor/4473605/lukas-wagner-2001"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Mehr auf meiner Eduki-Seite →
+      </a>
+    </p>
+
+    <p>
+      Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
+      die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
+
+      <br>
+
+      <a
+        href="https://www.rover.com/members/lukas-w-leidenschaftlicher-spazierganger-sucht-hunde/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Mehr auf meinem Roverr-Profil →
+      </a>
+    </p>
+
+  </section>
+
+
+</body>
+</html>
+```
