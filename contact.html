@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -44,7 +45,6 @@
 
     /* =========================
        NAVIGATION
-       IDENTISCH WIE ABOUT
     ========================= */
 
     nav {
@@ -105,23 +105,42 @@
 
       letter-spacing: 1px;
 
-      transition: color 0.3s ease;
+      font-weight: normal;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+
+      /* Verhindert weißes Flackern / Übergänge */
+      transition: none;
+
+      /* Verhindert Tap-Highlight auf Smartphones */
+      -webkit-tap-highlight-color: transparent;
+
+      outline: none;
     }
 
 
-    nav a:hover {
-      color: #00d9ff;
-    }
-
-
+    nav a:hover,
+    nav a:focus,
+    nav a:active,
     nav a.active {
       color: #00d9ff;
+
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      outline: none;
+    }
+
+
+    nav a:focus-visible {
+      outline: none;
     }
 
 
     /* =========================
        LOGO
-       IDENTISCH WIE ABOUT
     ========================= */
 
     .logo {
@@ -356,12 +375,24 @@
       font-size: 14px;
 
       color: #ccc;
+
+      font-weight: normal;
+    }
+
+
+    /* =========================
+       LUKAS BUSINESS IM FOOTER
+    ========================= */
+
+    .footer-brand {
+      color: #00d9ff;
+
+      font-weight: normal;
     }
 
 
     /* =========================
        MOBILE
-       IDENTISCH WIE ABOUT
     ========================= */
 
     @media (max-width: 700px) {
@@ -400,6 +431,18 @@
         line-height: 60px;
 
         letter-spacing: 0.5px;
+
+        font-weight: normal;
+      }
+
+
+      nav a:hover,
+      nav a:focus,
+      nav a:active,
+      nav a.active {
+        letter-spacing: 0.5px;
+
+        font-weight: normal;
       }
 
 
@@ -487,6 +530,18 @@
         line-height: 50px;
 
         letter-spacing: 0;
+
+        font-weight: normal;
+      }
+
+
+      nav a:hover,
+      nav a:focus,
+      nav a:active,
+      nav a.active {
+        letter-spacing: 0;
+
+        font-weight: normal;
       }
 
 
@@ -660,7 +715,7 @@
   <footer>
 
     <p>
-      © 2026 Lukas Business. Alle Rechte vorbehalten.
+      © 2026 <span class="footer-brand">Lukas Business</span>. Alle Rechte vorbehalten.
     </p>
 
   </footer>
@@ -668,5 +723,7 @@
 
 </body>
 </html>
+
+
 
 
