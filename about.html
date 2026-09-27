@@ -29,7 +29,6 @@
       min-height: 100%;
       font-family: Arial, sans-serif;
 
-      /* Verhindert weißen Blitz, bevor das Hintergrundbild geladen ist */
       background-color: #000;
 
       background-image: url("backgroundimage.jpg");
@@ -44,7 +43,6 @@
       display: flex;
       flex-direction: column;
 
-      /* Verhindert unnötiges weißes Rendering beim Seitenwechsel */
       color-scheme: dark;
     }
 
@@ -315,13 +313,6 @@
       width: 100%;
       max-width: none;
 
-      /*
-       * Das Eduki-Bild ist 300px breit
-       * und der Abstand zwischen Bild und Text beträgt 45px.
-       *
-       * Dadurch beginnt der Rover-Text exakt
-       * auf der gleichen Höhe wie der Eduki-Text.
-       */
       padding-left: 345px;
     }
 
@@ -498,7 +489,6 @@
         width: 100%;
       }
 
-      /* Auf Mobilgeräten keine Einrückung */
       .rover-text {
         padding-left: 0;
       }
@@ -641,6 +631,64 @@
 
 
     <!-- =========================
+         PERSÖNLICHER TEXT
+    ========================= -->
+
+    <div class="about-box">
+
+      <p class="about-text">
+
+        Zuverlässigkeit, Freundlichkeit und Hilfsbereitschaft gehören für mich
+        zu den wichtigsten Eigenschaften – sowohl im Umgang mit anderen Menschen
+        als auch bei meiner Arbeit. Ich bin ein gewissenhafter und
+        verantwortungsbewusster Mensch und lege großen Wert darauf, Aufgaben
+        pünktlich, sorgfältig und zuverlässig zu erledigen.
+
+        <br><br>
+
+        In vielen Bereichen der Dienstleistungen, die ich anbiete, konnte ich
+        bereits praktische Erfahrungen sammeln. Dadurch bringe ich nicht nur
+        Motivation und Lernbereitschaft mit, sondern auch ein gutes Gespür dafür,
+        worauf es bei einer zuverlässigen und professionellen Zusammenarbeit
+        ankommt. Gleichzeitig bin ich immer offen dafür, Neues zu lernen und mich
+        in neue Aufgaben und Themen einzuarbeiten.
+
+        <br><br>
+
+        Besonders wichtig ist mir, meinen Kunden Arbeit abzunehmen und ihnen
+        einen echten Mehrwert zu bieten. Ich möchte Aufgaben nicht einfach nur
+        erledigen, sondern mich aktiv darum bemühen, gute und passende Lösungen
+        zu finden. Eine offene, freundliche und respektvolle Kommunikation gehört
+        für mich dabei selbstverständlich zu einer guten Zusammenarbeit.
+
+        <br><br>
+
+        Der Wunsch, mir langfristig mit einem Online-Business ein zweites
+        finanzielles Standbein aufzubauen, ist für mich ein wichtiger persönlicher
+        Antrieb. Ich möchte meine vorhandenen Fähigkeiten sinnvoll einsetzen,
+        neue Erfahrungen sammeln und mich kontinuierlich weiterentwickeln.
+        Gleichzeitig möchte ich mir Schritt für Schritt etwas Eigenes aufbauen,
+        auf das ich langfristig stolz sein kann.
+
+        <br><br>
+
+        Ich sehe jede neue Aufgabe und jedes Projekt als Möglichkeit, dazuzulernen
+        und meine Erfahrungen weiter auszubauen. Mein Ziel ist es, meinen Kunden
+        zuverlässig zur Seite zu stehen, sie bestmöglich zu unterstützen und eine
+        Zusammenarbeit zu schaffen, auf die beide Seiten gerne zurückblicken.
+
+        <br><br>
+
+        Ich freue mich darauf, neue Menschen, spannende Projekte und
+        unterschiedliche Aufgaben kennenzulernen und gemeinsam gute Ergebnisse
+        zu erreichen.
+
+      </p>
+
+    </div>
+
+
+    <!-- =========================
          EDUKI + ROVER
          UNTEREINANDER
     ========================= -->
@@ -662,9 +710,10 @@
           <div class="eduki-text">
 
             <p class="about-text">
+
               Ich teile auf Eduki Unterrichtsmaterialien und kreative Ideen
               für den Schulalltag. Dabei konzentriere ich mich auf den Bereich
-              "Grundschule". Bitte folge mir dort, wenn du mich unterstützen willst.
+              „Grundschule“. Bitte folge mir dort, wenn du mich unterstützen willst.
 
               <br><br>
 
@@ -675,6 +724,7 @@
               >
                 Mehr auf meiner Eduki-Seite →
               </a>
+
             </p>
 
           </div>
@@ -690,7 +740,8 @@
         <div class="rover-text">
 
           <p class="about-text">
-            Ich bin auch auf Roverr aktiv und suche Kund/innen mit Hund,
+
+            Ich bin auch auf Rover aktiv und suche Kund/innen mit Hund,
             die in der Nähe von meinem Heimatort 67165 Waldsee wohnen.
 
             <br><br>
@@ -700,8 +751,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Mehr auf meinem Roverr-Profil →
+              Mehr auf meinem Rover-Profil →
             </a>
+
           </p>
 
         </div>
@@ -729,9 +781,11 @@
   ========================= -->
 
   <script>
+
     const backgroundImage = new Image();
 
     backgroundImage.src = "backgroundimage.jpg";
+
   </script>
 
 </body>
