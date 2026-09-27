@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -46,6 +47,7 @@
       color-scheme: dark;
     }
 
+
     /* =========================
        NAVIGATION
     ========================= */
@@ -71,6 +73,7 @@
       -webkit-backdrop-filter: blur(8px);
     }
 
+
     nav ul {
       list-style: none;
 
@@ -86,10 +89,18 @@
       padding: 0;
     }
 
+
     nav li {
       margin: 0;
       padding: 0;
     }
+
+
+    /* =========================
+       MENÜPUNKTE
+       KEINE BREITENÄNDERUNG
+       KEIN FLACKERN
+    ========================= */
 
     nav a {
       font-family: "Bebas Neue", sans-serif;
@@ -102,13 +113,45 @@
 
       letter-spacing: 1px;
 
-      transition: color 0.3s ease;
+      font-weight: normal;
+
+      /* Verhindert Veränderung der Schrift beim Anklicken */
+      font-synthesis: none;
+      font-variation-settings: normal;
+
+      /* Verhindert weißes Tap-Flackern auf Smartphones */
+      -webkit-tap-highlight-color: transparent;
+
+      /* Kein Übergang beim Anklicken */
+      transition: none;
+
+      /* Verhindert Fokus-Rahmen */
+      outline: none;
+
+      /* Gleichmäßiges Rendering */
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
     }
 
+
     nav a:hover,
+    nav a:focus,
+    nav a:active,
     nav a.active {
       color: #00d9ff;
+
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      outline: none;
     }
+
+
+    nav a:focus-visible {
+      outline: none;
+    }
+
 
     /* =========================
        LOGO
@@ -132,6 +175,7 @@
       pointer-events: none;
     }
 
+
     /* =========================
        ÜBER MICH
     ========================= */
@@ -148,6 +192,7 @@
 
       padding: 120px 25px 80px;
     }
+
 
     .about h2 {
       font-family: "Bebas Neue", sans-serif;
@@ -167,14 +212,16 @@
         0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
+
     /* =========================
        MEIN BILD
+       ETWAS WEITER NACH OBEN
     ========================= */
 
     .about-me-image {
       position: absolute;
 
-      top: 90px;
+      top: 55px;
       right: 35px;
 
       width: 190px;
@@ -198,6 +245,17 @@
       display: block;
     }
 
+
+    /* =========================
+       PERSÖNLICHER TEXT
+       ABSTAND ZUM BILD
+    ========================= */
+
+    .about > .about-box {
+      padding-right: 220px;
+    }
+
+
     /* =========================
        EDUKI + ROVER UNTEREINANDER
     ========================= */
@@ -212,6 +270,7 @@
       width: 100%;
     }
 
+
     .about-box {
       width: 100%;
       min-width: 0;
@@ -220,6 +279,7 @@
 
       display: block;
     }
+
 
     /* =========================
        EDUKI
@@ -234,6 +294,7 @@
 
       width: 100%;
     }
+
 
     .eduki-image {
       width: 300px;
@@ -255,12 +316,14 @@
       display: block;
     }
 
+
     .eduki-text {
       flex: 1;
       min-width: 0;
 
       width: 100%;
     }
+
 
     /* =========================
        TEXT
@@ -287,6 +350,7 @@
       max-width: none;
     }
 
+
     .about-text a {
       color: #00d9ff;
 
@@ -301,9 +365,11 @@
       transition: color 0.3s ease;
     }
 
+
     .about-text a:hover {
       color: white;
     }
+
 
     /* =========================
        ROVER
@@ -315,6 +381,7 @@
 
       padding-left: 345px;
     }
+
 
     /* =========================
        FOOTER
@@ -331,11 +398,25 @@
 
       font-size: 14px;
 
-      color: white;
+      color: #ccc;
+
+      font-weight: normal;
 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
+
+
+    /* =========================
+       LUKAS BUSINESS IM FOOTER
+    ========================= */
+
+    .footer-brand {
+      color: #00d9ff;
+
+      font-weight: normal;
+    }
+
 
     /* =========================
        TABLET
@@ -348,16 +429,25 @@
         height: 88px;
       }
 
+
       .about-me-image {
         width: 160px;
         height: 160px;
 
+        top: 50px;
         right: 25px;
       }
+
+
+      .about > .about-box {
+        padding-right: 190px;
+      }
+
 
       .eduki-section {
         gap: 30px;
       }
+
 
       .eduki-image {
         width: 250px;
@@ -366,11 +456,13 @@
         flex: 0 0 250px;
       }
 
+
       .rover-text {
         padding-left: 280px;
       }
 
     }
+
 
     /* =========================
        MOBILE
@@ -380,8 +472,10 @@
 
       nav {
         height: 60px;
+
         padding: 0 10px;
       }
+
 
       nav ul {
         display: flex;
@@ -399,13 +493,27 @@
         padding: 0 0 0 100px;
       }
 
+
       nav a {
         font-size: 17px;
 
         line-height: 60px;
 
         letter-spacing: 0.5px;
+
+        font-weight: normal;
       }
+
+
+      nav a:hover,
+      nav a:focus,
+      nav a:active,
+      nav a.active {
+        letter-spacing: 0.5px;
+
+        font-weight: normal;
+      }
+
 
       .logo {
         top: 0;
@@ -418,9 +526,11 @@
         object-position: left center;
       }
 
+
       .about {
         padding: 80px 20px 60px;
       }
+
 
       .about h2 {
         font-size: 48px;
@@ -430,6 +540,8 @@
         text-align: center;
       }
 
+
+      /* Bild auf Mobile normal im Seitenfluss */
       .about-me-image {
         position: relative;
 
@@ -441,12 +553,19 @@
         width: 155px;
         height: 155px;
 
-        margin: 0 0 30px auto;
+        margin: -10px 0 30px auto;
 
         border-width: 5px;
 
         background-color: white;
       }
+
+
+      /* Auf Mobile kein unnötiger rechter Abstand */
+      .about > .about-box {
+        padding-right: 0;
+      }
+
 
       .about-columns {
         display: flex;
@@ -456,9 +575,11 @@
         gap: 50px;
       }
 
+
       .about-box {
         width: 100%;
       }
+
 
       .eduki-section {
         flex-direction: column;
@@ -470,6 +591,7 @@
         width: 100%;
       }
 
+
       .eduki-image {
         width: 220px;
         height: 220px;
@@ -477,9 +599,11 @@
         flex: 0 0 220px;
       }
 
+
       .eduki-text {
         width: 100%;
       }
+
 
       .about-text {
         font-size: 17px;
@@ -489,11 +613,13 @@
         width: 100%;
       }
 
+
       .rover-text {
         padding-left: 0;
       }
 
     }
+
 
     /* =========================
        SEHR KLEINE HANDYS
@@ -505,27 +631,44 @@
         padding: 0 8px;
       }
 
+
       nav ul {
         gap: 9px;
 
         padding-left: 85px;
       }
 
+
       nav a {
         font-size: 15px;
 
         letter-spacing: 0;
+
+        font-weight: normal;
       }
+
+
+      nav a:hover,
+      nav a:focus,
+      nav a:active,
+      nav a.active {
+        letter-spacing: 0;
+
+        font-weight: normal;
+      }
+
 
       .logo {
         width: 120px;
         height: 50px;
       }
 
+
       .about {
         padding-left: 15px;
         padding-right: 15px;
       }
+
 
       .about h2 {
         font-size: 42px;
@@ -533,18 +676,23 @@
         text-align: center;
       }
 
+
       .about-me-image {
         width: 135px;
         height: 135px;
 
+        margin-top: -10px;
+
         background-color: white;
       }
+
 
       .eduki-section {
         flex-direction: column;
 
         gap: 20px;
       }
+
 
       .eduki-image {
         width: 190px;
@@ -553,11 +701,13 @@
         flex: 0 0 190px;
       }
 
+
       .about-text {
         font-size: 16px;
 
         line-height: 1.7;
       }
+
 
       .rover-text {
         padding-left: 0;
@@ -571,6 +721,7 @@
 
 <body>
 
+
   <!-- =========================
        NAVIGATION
   ========================= -->
@@ -583,6 +734,7 @@
       class="logo"
     >
 
+
     <ul>
 
       <li>
@@ -591,17 +743,20 @@
         </a>
       </li>
 
+
       <li>
         <a href="about.html" class="active">
           Über mich
         </a>
       </li>
 
+
       <li>
         <a href="services.html">
           Leistungen
         </a>
       </li>
+
 
       <li>
         <a href="contact.html">
@@ -620,12 +775,15 @@
 
   <section class="about">
 
+
     <!-- Bild von Lukas -->
+
     <img
       src="bildlukas.png"
       alt="Lukas"
       class="about-me-image"
     >
+
 
     <h2>Über mich</h2>
 
@@ -697,6 +855,7 @@
 
 
       <!-- EDUKI -->
+
       <div class="about-box">
 
         <div class="eduki-section">
@@ -706,6 +865,7 @@
             alt="Eduki"
             class="eduki-image"
           >
+
 
           <div class="eduki-text">
 
@@ -735,6 +895,7 @@
 
 
       <!-- ROVER -->
+
       <div class="about-box">
 
         <div class="rover-text">
@@ -768,10 +929,12 @@
 
   <!-- =========================
        FOOTER
-  ========================= -->
+    ========================= -->
 
   <footer>
-    © 2026 Lukas Business – Alle Rechte vorbehalten.
+
+    © 2026 <span class="footer-brand">Lukas Business</span> – Alle Rechte vorbehalten.
+
   </footer>
 
 
@@ -788,8 +951,11 @@
 
   </script>
 
+
 </body>
 </html>
+
+
 
 
 
