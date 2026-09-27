@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -150,12 +151,6 @@
     }
 
 
-    /*
-      Das Hintergrundbild kommt weiterhin vom body.
-      Der Overlay ist bewusst transparenter,
-      damit die Farbe des Hintergrundbildes sichtbar bleibt.
-    */
-
     .hero::before {
       content: "";
 
@@ -184,11 +179,35 @@
 
       margin: 0 auto;
 
-      /*
-        Weniger Abstand oben/unten,
-        damit der komplette Inhalt sichtbar bleibt.
-      */
       padding: 30px 0;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+
+    /* =========================
+       HERO BILD
+    ========================= */
+
+    .hero-image {
+      width: 100%;
+      max-width: 520px;
+
+      justify-self: end;
+
+      display: block;
+
+      border-radius: 22px;
+
+      object-fit: cover;
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
 
@@ -634,10 +653,6 @@
     @media (max-width: 700px) {
 
       body {
-        /*
-          Verhindert Probleme mit fixed backgrounds
-          auf mobilen Geräten.
-        */
         background-attachment: scroll;
       }
 
@@ -701,11 +716,22 @@
       .hero-content {
         width: 90%;
 
-        /*
-          Weniger Abstand,
-          damit der komplette Hero sichtbar bleibt.
-        */
         padding: 40px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .hero-image {
+        justify-self: center;
+
+        width: 100%;
+
+        max-width: 500px;
+
+        order: 2;
       }
 
 
@@ -791,10 +817,9 @@
       .hero-content {
         width: 90%;
 
-        /*
-          Noch etwas kompakter für sehr kleine Displays.
-        */
         padding: 30px 0;
+
+        gap: 28px;
       }
 
 
@@ -816,6 +841,11 @@
         line-height: 1.6;
 
         margin: 22px 0;
+      }
+
+
+      .hero-image {
+        border-radius: 16px;
       }
 
 
@@ -843,11 +873,10 @@
     }
 
   </style>
+
 </head>
 
-
 <body>
-
 
   <!-- =========================
        NAVIGATION
@@ -855,42 +884,43 @@
 
   <nav>
 
-    <img
-      src="logoone.png"
-      alt="Lukas Business Logo"
-      class="logo"
-    >
+```
+<img
+  src="logoone.png"
+  alt="Lukas Business Logo"
+  class="logo"
+>
 
-    <ul>
+<ul>
 
-      <li>
-        <a href="index.html" class="active">
-          Home
-        </a>
-      </li>
+  <li>
+    <a href="index.html" class="active">
+      Home
+    </a>
+  </li>
 
-      <li>
-        <a href="about.html">
-          Über mich
-        </a>
-      </li>
+  <li>
+    <a href="about.html">
+      Über mich
+    </a>
+  </li>
 
-      <li>
-        <a href="services.html">
-          Leistungen
-        </a>
-      </li>
+  <li>
+    <a href="services.html">
+      Leistungen
+    </a>
+  </li>
 
-      <li>
-        <a href="contact.html">
-          Kontakt
-        </a>
-      </li>
+  <li>
+    <a href="contact.html">
+      Kontakt
+    </a>
+  </li>
 
-    </ul>
+</ul>
+```
 
   </nav>
-
 
   <!-- =========================
        HERO
@@ -898,317 +928,331 @@
 
   <main>
 
-    <section class="hero">
+```
+<section class="hero">
 
-      <div class="hero-content">
+  <div class="hero-content">
 
-        <div class="hero-small">
-          LUKAS BUSINESS
-        </div>
+    <div class="hero-text-content">
 
-        <h1>
-          Ideen.<br>
-          Projekte.<br>
-          <span>Ergebnisse.</span>
-        </h1>
-
-        <p class="hero-text">
-          Willkommen bei Lukas Business. Hier entstehen individuelle
-          Lösungen, professionelle Projekte und Ideen mit einem klaren
-          Ziel: aus Vorstellungen greifbare Ergebnisse zu machen.
-        </p>
-
-        <div class="buttons">
-
-          <a href="services.html" class="button button-primary">
-            Leistungen ansehen
-          </a>
-
-          <a href="contact.html" class="button button-secondary">
-            Kontakt aufnehmen
-          </a>
-
-        </div>
-
+      <div class="hero-small">
+        LUKAS BUSINESS
       </div>
 
-    </section>
-
-
-    <!-- =========================
-         LEISTUNGEN
-    ========================= -->
-
-    <section class="services-section">
-
-      <div class="section-container">
-
-        <h2 class="section-title">
-          Was ich <span>anbiete</span>
-        </h2>
-
-        <p class="section-intro">
-          Von der ersten Idee bis zum fertigen Ergebnis steht eine
-          klare, strukturierte und persönliche Umsetzung im Mittelpunkt.
-        </p>
-
-        <div class="cards">
-
-          <div class="card">
-
-            <div class="card-number">
-              01
-            </div>
-
-            <h3>
-              Beratung
-            </h3>
-
-            <p>
-              Gemeinsam Ideen entwickeln, Möglichkeiten analysieren
-              und die nächsten Schritte klar definieren.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-number">
-              02
-            </div>
-
-            <h3>
-              Projekte
-            </h3>
-
-            <p>
-              Konzepte und Projekte strukturiert planen und
-              zielgerichtet umsetzen.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-number">
-              03
-            </div>
-
-            <h3>
-              Lösungen
-            </h3>
-
-            <p>
-              Individuelle Lösungen mit Fokus auf Qualität,
-              Zuverlässigkeit und einem professionellen Ergebnis.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         ÜBER MICH
-    ========================= -->
-
-    <section class="about-section">
-
-      <div class="section-container">
-
-        <div class="about-grid">
-
-          <div class="about-text">
-
-            <h2 class="section-title">
-              Über <span>mich</span>
-            </h2>
-
-            <p>
-              Hinter Lukas Business steht eine persönliche und
-              direkte Arbeitsweise. Dabei geht es nicht darum,
-              möglichst komplizierte Lösungen zu schaffen,
-              sondern darum, das richtige Ergebnis zu erreichen.
-            </p>
-
-            <p>
-              Transparente Kommunikation, saubere Planung und
-              individuelle Lösungen bilden dabei die Grundlage
-              für jedes Projekt.
-            </p>
-
-            <a href="about.html" class="button button-primary">
-              Mehr über mich
-            </a>
-
-          </div>
-
-
-          <div class="about-box">
-
-            <h3>
-              Mein Anspruch
-            </h3>
-
-            <ul>
-
-              <li>
-                Persönliche Zusammenarbeit
-              </li>
-
-              <li>
-                Klare Kommunikation
-              </li>
-
-              <li>
-                Individuelle Lösungen
-              </li>
-
-              <li>
-                Strukturierte Umsetzung
-              </li>
-
-              <li>
-                Fokus auf das Ergebnis
-              </li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         VORTEILE
-    ========================= -->
-
-    <section class="advantages-section">
-
-      <div class="section-container">
-
-        <h2 class="section-title">
-          Warum <span>Lukas Business?</span>
-        </h2>
-
-        <p class="section-intro">
-          Ein unkomplizierter Ablauf, persönliche Betreuung und
-          ein klarer Blick auf das eigentliche Ziel.
-        </p>
-
-        <div class="advantages">
-
-          <div class="advantage">
-
-            <div class="advantage-number">
-              01
-            </div>
-
-            <h3>
-              Persönlich
-            </h3>
-
-            <p>
-              Direkter Kontakt und individuelle Betreuung.
-            </p>
-
-          </div>
-
-
-          <div class="advantage">
-
-            <div class="advantage-number">
-              02
-            </div>
-
-            <h3>
-              Klar
-            </h3>
-
-            <p>
-              Verständliche Kommunikation ohne unnötige Umwege.
-            </p>
-
-          </div>
-
-
-          <div class="advantage">
-
-            <div class="advantage-number">
-              03
-            </div>
-
-            <h3>
-              Flexibel
-            </h3>
-
-            <p>
-              Lösungen werden an das jeweilige Projekt angepasst.
-            </p>
-
-          </div>
-
-
-          <div class="advantage">
-
-            <div class="advantage-number">
-              04
-            </div>
-
-            <h3>
-              Zielorientiert
-            </h3>
-
-            <p>
-              Der Fokus liegt auf einem konkreten Ergebnis.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         KONTAKT CTA
-    ========================= -->
-
-    <section class="cta-section">
-
-      <div class="section-container">
-
-        <h2 class="section-title">
-          Bereit für das nächste <span>Projekt?</span>
-        </h2>
-
-        <p>
-          Du hast eine Idee, ein Projekt oder möchtest einfach
-          mehr erfahren? Dann melde dich gerne direkt.
-        </p>
-
-        <a href="contact.html" class="button button-primary">
+      <h1>
+        Ideen.<br>
+        Projekte.<br>
+        <span>Ergebnisse.</span>
+      </h1>
+
+      <p class="hero-text">
+        Willkommen bei Lukas Business. Hier entstehen individuelle
+        Lösungen, professionelle Projekte und Ideen mit einem klaren
+        Ziel: aus Vorstellungen greifbare Ergebnisse zu machen.
+      </p>
+
+      <div class="buttons">
+
+        <a href="services.html" class="button button-primary">
+          Leistungen ansehen
+        </a>
+
+        <a href="contact.html" class="button button-secondary">
           Kontakt aufnehmen
         </a>
 
       </div>
 
-    </section>
+    </div>
+
+
+    <!-- BUSINESSBILD OBEN RECHTS -->
+
+    <img
+      src="lukasbusinessbild.jpg"
+      alt="Lukas Business"
+      class="hero-image"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LEISTUNGEN
+========================= -->
+
+<section class="services-section">
+
+  <div class="section-container">
+
+    <h2 class="section-title">
+      Was ich <span>anbiete</span>
+    </h2>
+
+    <p class="section-intro">
+      Von der ersten Idee bis zum fertigen Ergebnis steht eine
+      klare, strukturierte und persönliche Umsetzung im Mittelpunkt.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-number">
+          01
+        </div>
+
+        <h3>
+          Beratung
+        </h3>
+
+        <p>
+          Gemeinsam Ideen entwickeln, Möglichkeiten analysieren
+          und die nächsten Schritte klar definieren.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          02
+        </div>
+
+        <h3>
+          Projekte
+        </h3>
+
+        <p>
+          Konzepte und Projekte strukturiert planen und
+          zielgerichtet umsetzen.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          03
+        </div>
+
+        <h3>
+          Lösungen
+        </h3>
+
+        <p>
+          Individuelle Lösungen mit Fokus auf Qualität,
+          Zuverlässigkeit und einem professionellen Ergebnis.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ÜBER MICH
+========================= -->
+
+<section class="about-section">
+
+  <div class="section-container">
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <h2 class="section-title">
+          Über <span>mich</span>
+        </h2>
+
+        <p>
+          Hinter Lukas Business steht eine persönliche und
+          direkte Arbeitsweise. Dabei geht es nicht darum,
+          möglichst komplizierte Lösungen zu schaffen,
+          sondern darum, das richtige Ergebnis zu erreichen.
+        </p>
+
+        <p>
+          Transparente Kommunikation, saubere Planung und
+          individuelle Lösungen bilden dabei die Grundlage
+          für jedes Projekt.
+        </p>
+
+        <a href="about.html" class="button button-primary">
+          Mehr über mich
+        </a>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <h3>
+          Mein Anspruch
+        </h3>
+
+        <ul>
+
+          <li>
+            Persönliche Zusammenarbeit
+          </li>
+
+          <li>
+            Klare Kommunikation
+          </li>
+
+          <li>
+            Individuelle Lösungen
+          </li>
+
+          <li>
+            Strukturierte Umsetzung
+          </li>
+
+          <li>
+            Fokus auf das Ergebnis
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     VORTEILE
+========================= -->
+
+<section class="advantages-section">
+
+  <div class="section-container">
+
+    <h2 class="section-title">
+      Warum <span>Lukas Business?</span>
+    </h2>
+
+    <p class="section-intro">
+      Ein unkomplizierter Ablauf, persönliche Betreuung und
+      ein klarer Blick auf das eigentliche Ziel.
+    </p>
+
+    <div class="advantages">
+
+      <div class="advantage">
+
+        <div class="advantage-number">
+          01
+        </div>
+
+        <h3>
+          Persönlich
+        </h3>
+
+        <p>
+          Direkter Kontakt und individuelle Betreuung.
+        </p>
+
+      </div>
+
+
+      <div class="advantage">
+
+        <div class="advantage-number">
+          02
+        </div>
+
+        <h3>
+          Klar
+        </h3>
+
+        <p>
+          Verständliche Kommunikation ohne unnötige Umwege.
+        </p>
+
+      </div>
+
+
+      <div class="advantage">
+
+        <div class="advantage-number">
+          03
+        </div>
+
+        <h3>
+          Flexibel
+        </h3>
+
+        <p>
+          Lösungen werden an das jeweilige Projekt angepasst.
+        </p>
+
+      </div>
+
+
+      <div class="advantage">
+
+        <div class="advantage-number">
+          04
+        </div>
+
+        <h3>
+          Zielorientiert
+        </h3>
+
+        <p>
+          Der Fokus liegt auf einem konkreten Ergebnis.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     KONTAKT CTA
+========================= -->
+
+<section class="cta-section">
+
+  <div class="section-container">
+
+    <h2 class="section-title">
+      Bereit für das nächste <span>Projekt?</span>
+    </h2>
+
+    <p>
+      Du hast eine Idee, ein Projekt oder möchtest einfach
+      mehr erfahren? Dann melde dich gerne direkt.
+    </p>
+
+    <a href="contact.html" class="button button-primary">
+      Kontakt aufnehmen
+    </a>
+
+  </div>
+
+</section>
+```
 
   </main>
-
 
   <!-- =========================
        FOOTER
@@ -1216,11 +1260,13 @@
 
   <footer>
 
-    © 2026 <span>Lukas Business</span> – Alle Rechte vorbehalten.
+```
+© 2026 <span>Lukas Business</span> – Alle Rechte vorbehalten.
+```
 
   </footer>
 
-
 </body>
 </html>
+
 
