@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Über mich | Lukas Business</title>
-    <link rel="icon" type="image/jpg" href="tabbild.jpg">
-
+  <link rel="icon" type="image/jpg" href="tabbild.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +23,7 @@
       padding: 0;
       min-height: 100%;
       background-color: #000;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -47,6 +47,27 @@
       flex-direction: column;
 
       color-scheme: dark;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+
+    /* =========================
+       LINKS
+    ========================= */
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    a:focus,
+    a:active,
+    a:visited {
+      outline: none;
     }
 
 
@@ -100,8 +121,6 @@
 
     /* =========================
        MENÜPUNKTE
-       KEINE BREITENÄNDERUNG
-       KEIN FLACKERN
     ========================= */
 
     nav a {
@@ -117,20 +136,15 @@
 
       font-weight: normal;
 
-      /* Verhindert Veränderung der Schrift beim Anklicken */
       font-synthesis: none;
       font-variation-settings: normal;
 
-      /* Verhindert weißes Tap-Flackern auf Smartphones */
       -webkit-tap-highlight-color: transparent;
 
-      /* Kein Übergang beim Anklicken */
       transition: none;
 
-      /* Verhindert Fokus-Rahmen */
       outline: none;
 
-      /* Gleichmäßiges Rendering */
       -webkit-font-smoothing: antialiased;
       text-rendering: geometricPrecision;
     }
@@ -152,6 +166,74 @@
 
     nav a:focus-visible {
       outline: none;
+    }
+
+
+    /* =========================
+       INSTAGRAM IM MENÜ
+    ========================= */
+
+    .instagram-link {
+      position: absolute;
+
+      top: 50%;
+      right: 25px;
+
+      transform: translateY(-50%);
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+
+      text-decoration: none;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+
+      border-radius: 50%;
+
+      background: rgba(0, 0, 0, 0.35);
+
+      transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+
+      z-index: 1002;
+
+      outline: none;
+    }
+
+
+    .instagram-link svg {
+      width: 22px;
+      height: 22px;
+
+      display: block;
+
+      fill: currentColor;
+    }
+
+
+    .instagram-link:hover {
+      color: #00d9ff;
+
+      border-color: #00d9ff;
+
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+
+    .instagram-link:focus,
+    .instagram-link:active,
+    .instagram-link:visited {
+      outline: none;
+      text-decoration: none;
     }
 
 
@@ -217,7 +299,6 @@
 
     /* =========================
        MEIN BILD
-       ETWAS WEITER NACH OBEN
     ========================= */
 
     .about-me-image {
@@ -250,11 +331,74 @@
 
     /* =========================
        PERSÖNLICHER TEXT
-       ABSTAND ZUM BILD
     ========================= */
 
     .about > .about-box {
       padding-right: 0px;
+    }
+
+
+    /* =========================
+       INSTAGRAM UNTER ÜBER MICH
+    ========================= */
+
+    .about-instagram-wrapper {
+      margin-top: 25px;
+    }
+
+
+    .about-instagram {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      color: white;
+
+      text-decoration: none;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+
+      border-radius: 50%;
+
+      background: rgba(0, 0, 0, 0.35);
+
+      transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+
+      outline: none;
+    }
+
+
+    .about-instagram svg {
+      width: 22px;
+      height: 22px;
+
+      display: block;
+
+      fill: currentColor;
+    }
+
+
+    .about-instagram:hover {
+      color: #00d9ff;
+
+      border-color: #00d9ff;
+
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+
+    .about-instagram:focus,
+    .about-instagram:active,
+    .about-instagram:visited {
+      outline: none;
+      text-decoration: none;
     }
 
 
@@ -492,7 +636,8 @@
         width: 100%;
 
         margin: 0;
-        padding: 0 0 0 100px;
+
+        padding: 0 48px 0 100px;
       }
 
 
@@ -517,6 +662,28 @@
       }
 
 
+      /* =========================
+         MOBILE INSTAGRAM MENÜ
+      ========================= */
+
+      .instagram-link {
+        width: 36px;
+        height: 36px;
+
+        right: 8px;
+      }
+
+
+      .instagram-link svg {
+        width: 19px;
+        height: 19px;
+      }
+
+
+      /* =========================
+         MOBILE LOGO
+      ========================= */
+
       .logo {
         top: 0;
         left: 0;
@@ -528,6 +695,10 @@
         object-position: left center;
       }
 
+
+      /* =========================
+         ÜBER MICH
+      ========================= */
 
       .about {
         padding: 80px 20px 60px;
@@ -544,6 +715,7 @@
 
 
       /* Bild auf Mobile normal im Seitenfluss */
+
       .about-me-image {
         position: relative;
 
@@ -564,8 +736,30 @@
 
 
       /* Auf Mobile kein unnötiger rechter Abstand */
+
       .about > .about-box {
         padding-right: 0;
+      }
+
+
+      /* =========================
+         INSTAGRAM MOBILE
+      ========================= */
+
+      .about-instagram {
+        width: 36px;
+        height: 36px;
+      }
+
+
+      .about-instagram svg {
+        width: 19px;
+        height: 19px;
+      }
+
+
+      .about-instagram-wrapper {
+        margin-top: 20px;
       }
 
 
@@ -637,7 +831,8 @@
       nav ul {
         gap: 9px;
 
-        padding-left: 85px;
+        padding-left: 75px;
+        padding-right: 42px;
       }
 
 
@@ -660,11 +855,37 @@
       }
 
 
+      /* =========================
+         INSTAGRAM MENÜ
+      ========================= */
+
+      .instagram-link {
+        width: 34px;
+        height: 34px;
+
+        right: 7px;
+      }
+
+
+      .instagram-link svg {
+        width: 18px;
+        height: 18px;
+      }
+
+
+      /* =========================
+         LOGO
+      ========================= */
+
       .logo {
         width: 120px;
         height: 50px;
       }
 
+
+      /* =========================
+         ÜBER MICH
+      ========================= */
 
       .about {
         padding-left: 15px;
@@ -686,6 +907,22 @@
         margin-top: -10px;
 
         background-color: white;
+      }
+
+
+      /* =========================
+         INSTAGRAM SEHR KLEINE HANDYS
+      ========================= */
+
+      .about-instagram {
+        width: 34px;
+        height: 34px;
+      }
+
+
+      .about-instagram svg {
+        width: 18px;
+        height: 18px;
       }
 
 
@@ -715,6 +952,19 @@
         padding-left: 0;
       }
 
+
+      /* =========================
+         FOOTER
+      ========================= */
+
+      footer {
+        padding: 18px 12px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+      }
+
     }
 
   </style>
@@ -735,6 +985,29 @@
       alt="Lukas Business Logo"
       class="logo"
     >
+
+
+    <!-- INSTAGRAM IM MENÜ -->
+
+    <a
+      class="instagram-link"
+      href="https://www.instagram.com/eduki.luki/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      title="Instagram"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3 3 3 0 0 0 3-3z"/>
+
+      </svg>
+
+    </a>
 
 
     <ul>
@@ -787,7 +1060,9 @@
     >
 
 
-    <h2>Über mich</h2>
+    <h2>
+      Über mich
+    </h2>
 
 
     <!-- =========================
@@ -844,6 +1119,35 @@
         zu erreichen.
 
       </p>
+
+
+      <!-- =========================
+           INSTAGRAM
+      ========================= -->
+
+      <div class="about-instagram-wrapper">
+
+        <a
+          class="about-instagram"
+          href="https://www.instagram.com/eduki.luki/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          title="Instagram"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3 3 3 0 0 0 3-3z"/>
+
+          </svg>
+
+        </a>
+
+      </div>
 
     </div>
 
@@ -931,11 +1235,15 @@
 
   <!-- =========================
        FOOTER
-    ========================= -->
+  ========================= -->
 
   <footer>
 
-    © 2026 <span class="footer-brand">Lukas Business</span> – Alle Rechte vorbehalten.
+    © 2026
+    <span class="footer-brand">
+      Lukas Business
+    </span>
+    – Alle Rechte vorbehalten.
 
   </footer>
 
@@ -956,6 +1264,8 @@
 
 </body>
 </html>
+
+
 
 
 
